@@ -1,0 +1,22 @@
+/* ALINA VIP - Humans.txt */
+
+/* TEAM */
+Founder & CEO: ALINA VIP Management
+Web Development: ALINA VIP Development Team
+SEO: ALINA VIP SEO Team
+Content: ALINA VIP Content Team
+
+/* SITE */
+Last Updated: 2026-08-22
+Standards: HTML5, CSS3, JavaScript, React, TypeScript
+Components: React, React Router, Tailwind CSS, Lucide Icons
+Software: Vite, Node.js
+
+/* THANKS */
+Thanks to all our clients for their trust and loyalty.
+Thanks to our companions for their dedication and professionalism.
+
+/* CONTACT */
+Phone: +91-9996265679
+Email: contact@gurgaonescortservice.site
+Website: https://gurgaonescortservice.site

@@ -25,7 +25,7 @@ import { services } from '@/data/content';
 import { categories } from '@/data/categories';
 
 export const metadata: Metadata = {
-  title: 'Escorts Service in Gurgaon (Gurugram) | VIP Escort Service ALINA VIP',
+  title: 'Escorts Service in Gurgaon (Gurugram) | VIP Escort Service Gurgaon Escort Service',
   description:
     'Browse luxury escort service packages in Gurgaon (Gurugram). Russian call girls, VIP models, independent escorts, and 5-star hotel outcalls available 24/7.',
   keywords: siteConfig.keywords,
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     languages: getAlternateLanguages('/services'),
   },
   openGraph: {
-    title: 'Escorts Service in Gurgaon (Gurugram) | VIP Escort Service ALINA VIP',
+    title: 'Escorts Service in Gurgaon (Gurugram) | VIP Escort Service Gurgaon Escort Service',
     description:
       'Browse luxury escort service packages in Gurgaon (Gurugram). Russian call girls, VIP models, independent escorts, and 5-star hotel outcalls available 24/7.',
     url: `${siteConfig.url}/services`,
@@ -85,7 +85,7 @@ export default function ServicesPage() {
             VIP Escorts Service in <span className="text-gradient-gold">Gurgaon (Gurugram)</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            <strong className="text-gold-400 font-semibold">ALINA VIP India</strong> delivers the premier <Link href="/services" className="text-gold-400 hover:underline font-medium">escort service in Gurgaon</Link> (Gurugram) tailored for elite gentlemen and corporate executives. Browse verified profiles across specialized categories including{' '}
+            <strong className="text-gold-400 font-semibold">Gurgaon Escort Service India</strong> delivers the premier <Link href="/services" className="text-gold-400 hover:underline font-medium">escort service in Gurgaon</Link> (Gurugram) tailored for elite gentlemen and corporate executives. Browse verified profiles across specialized categories including{' '}
             <Link href="/category/russian-call-girls" className="text-gold-400 hover:underline font-medium">
               Russian call girls
             </Link>
@@ -134,7 +134,7 @@ export default function ServicesPage() {
             </h2>
             <div className="gold-divider mx-auto" />
             <p className="text-gray-600 max-w-2xl mx-auto mt-6 leading-relaxed text-base">
-              <strong className="text-[#0F172A]">ALINA VIP</strong> offers a comprehensive range of premium{' '}
+              <strong className="text-[#0F172A]">Gurgaon Escort Service</strong> offers a comprehensive range of premium{' '}
               <Link href="/services" className="text-gold-600 hover:underline font-medium">
                 escort service in Gurgaon
               </Link>{' '}
@@ -366,7 +366,7 @@ export default function ServicesPage() {
             </h2>
             <div className="space-y-4 text-gray-700 text-base leading-relaxed">
               <p>
-                <strong>ALINA VIP</strong> provides high-caliber escort services for gentlemen who demand discretion, elegance, and genuine conversation. Whether attending executive dinners, social galas, international business functions, or enjoying a private evening at a luxury suite, our agency ensures an experience defined by grace and sophistication.
+                <strong>Gurgaon Escort Service</strong> provides high-caliber escort services for gentlemen who demand discretion, elegance, and genuine conversation. Whether attending executive dinners, social galas, international business functions, or enjoying a private evening at a luxury suite, our agency ensures an experience defined by grace and sophistication.
               </p>
               <p>
                 Each engagement is managed directly through our dedicated concierge desk. We respect client confidentiality above all else, ensuring that identity records, communications, and booking details remain private and secure.

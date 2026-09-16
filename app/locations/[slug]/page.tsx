@@ -61,22 +61,32 @@ export async function generateMetadata({ params }: LocationPageProps): Promise<M
 
   const title =
     location.slug === 'gurgaon'
-      ? 'Gurgaon Escorts Directory & Sector Guide | 108 Verified Locations | ALINA VIP'
+      ? 'Gurgaon Escorts Directory & Sector Guide | 108 Verified Locations | Gurgaon Escort Service'
       : location.region === 'Gurgaon'
-      ? `Escort Service in ${location.name}, Gurgaon (Gurugram) | ALINA VIP`
+      ? `Escort Service in ${location.name}, Gurgaon (Gurugram) | Gurgaon Escort Service`
       : location.metaTitle;
   const description =
     location.slug === 'gurgaon'
       ? 'Comprehensive directory of verified call girls and escort service in Gurgaon across all 108 sectors, DLF, and Golf Course Road with 20-30 min 5-star hotel dispatch.'
       : location.region === 'Gurgaon'
-      ? `Discreet 24/7 escort service in ${location.name}, Gurgaon (Gurugram). Verified VIP call girls, Russian models, and 20-30 min 5-star hotel outcalls with ALINA VIP.`
+      ? `Discreet 24/7 escort service in ${location.name}, Gurgaon (Gurugram). Verified VIP call girls, Russian models, and 20-30 min 5-star hotel outcalls with Gurgaon Escort Service.`
       : location.metaDescription;
   const canonicalUrl = `${siteConfig.url}/locations/${location.slug}`;
 
   return {
     title,
     description,
-    keywords: siteConfig.keywords,
+    keywords: [
+      `${location.name.toLowerCase()} escort service`,
+      `${location.name.toLowerCase()} escorts`,
+      `escort service in ${location.name.toLowerCase()}`,
+      `call girls in ${location.name.toLowerCase()}`,
+      `call girls ${location.name.toLowerCase()}`,
+      `${location.name.toLowerCase()} call girl service`,
+      `vip escorts ${location.name.toLowerCase()}`,
+      `russian escorts ${location.name.toLowerCase()}`,
+      ...(siteConfig.keywords || []).slice(0, 10),
+    ],
     robots: {
       index: isIndexable,
       follow: true,
@@ -190,7 +200,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
             )}
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light">
-            {location.shortDescription} ALINA VIP provides verified, discreet, and premium escort services across {location.name} and surrounding regional corridors.
+            {location.shortDescription} Gurgaon Escort Service provides verified, discreet, and premium escort services across {location.name} and surrounding regional corridors.
           </p>
           <div className="gold-divider mx-auto mt-8 mb-8" />
 
@@ -247,7 +257,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
                   ) : (
                     <>
                       <p>
-                        <strong>ALINA VIP</strong> provides premier luxury escort services in {location.name}, one of the most distinguished areas in {location.city}. Known for its upscale lifestyle and vibrant commercial landscape, {location.name} attracts discerning gentlemen who demand discretion, elegance, and authentic hospitality.
+                        <strong>Gurgaon Escort Service</strong> provides premier luxury escort services in {location.name}, one of the most distinguished areas in {location.city}. Known for its upscale lifestyle and vibrant commercial landscape, {location.name} attracts discerning gentlemen who demand discretion, elegance, and authentic hospitality.
                       </p>
                       <p>
                         Whether staying at premier five-star luxury suites or hosting private dinners, our verified <Link href="/category/vip-call-girls" className="text-gold-600 hover:underline font-medium">VIP call girls</Link> and <Link href="/services" className="text-gold-600 hover:underline font-medium">escort girls</Link> provide charismatic social presence tailored to your highest expectations.
@@ -278,7 +288,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
               {/* Why Choose Us in this location */}
               <div>
                 <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-6 font-serif">
-                  Why Choose ALINA VIP in {location.name}?
+                  Why Choose Gurgaon Escort Service in {location.name}?
                 </h3>
                 {location.whyChoose?.overview ? (
                   <div className="space-y-4">
@@ -394,7 +404,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
                   Private Outcall Protocol &amp; Hotel Etiquette in {location.name}
                 </h3>
                 <p className="text-gray-700 text-sm leading-relaxed">
-                  Booking an outcall escort service in {location.name} with <strong>ALINA VIP</strong> is organized to provide maximum convenience, privacy, and peace of mind. Whether you are staying at an executive business hotel, a five-star luxury suite, or a private serviced residence, our escorts arrive punctually and conduct themselves with refined social poise.
+                  Booking an outcall escort service in {location.name} with <strong>Gurgaon Escort Service</strong> is organized to provide maximum convenience, privacy, and peace of mind. Whether you are staying at an executive business hotel, a five-star luxury suite, or a private serviced residence, our escorts arrive punctually and conduct themselves with refined social poise.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4 pt-2">
                   <div className="bg-white p-4 rounded-xl border border-gray-100">
@@ -410,7 +420,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
                       Zero Advance Fees
                     </h4>
                     <p className="text-xs text-gray-600 leading-relaxed">
-                      To protect you from fraud and deceptive advance-fee schemes, ALINA VIP supports Cash on Delivery. You meet and verify your call girl in person before settling the booking fee.
+                      To protect you from fraud and deceptive advance-fee schemes, Gurgaon Escort Service supports Cash on Delivery. You meet and verify your call girl in person before settling the booking fee.
                     </p>
                   </div>
                 </div>

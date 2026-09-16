@@ -16,17 +16,21 @@ import ContactForm from '@/components/ContactForm';
 import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Book Gurgaon Escorts | 24/7 Private Concierge | ALINA VIP India',
+  title: 'Book Gurgaon Escorts | 24/7 Private Concierge | Gurgaon Escort Service India',
   description:
-    'Connect with ALINA VIP India for verified call girl reservations in Gurgaon. Call +91-9996265679 or WhatsApp for confidential 20-30 min hotel & residence outcalls.',
+    'Connect with Gurgaon Escort Service India for verified call girl reservations in Gurgaon. Call +91-9996265679 or WhatsApp for confidential 20-30 min hotel & residence outcalls.',
+  keywords: [
+    ...siteConfig.keywords.slice(0, 10),
+    'contact concierge, 24/7 escort booking, whatsapp call girls',
+  ],
   alternates: {
     canonical: `${siteConfig.url}/contact`,
     languages: getAlternateLanguages('/contact'),
   },
   openGraph: {
-    title: 'Book Gurgaon Escorts | 24/7 Private Concierge | ALINA VIP India',
+    title: 'Book Gurgaon Escorts | 24/7 Private Concierge | Gurgaon Escort Service India',
     description:
-      'Connect with ALINA VIP India for verified call girl reservations in Gurgaon. Call +91-9996265679 or WhatsApp for confidential 20-30 min hotel & residence outcalls.',
+      'Connect with Gurgaon Escort Service India for verified call girl reservations in Gurgaon. Call +91-9996265679 or WhatsApp for confidential 20-30 min hotel & residence outcalls.',
     url: `${siteConfig.url}/contact`,
     type: 'website',
   },
@@ -47,7 +51,7 @@ export default function ContactPage() {
             ★ 24/7 Concierge Support
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-serif tracking-wide">
-            Contact <span className="text-gradient-gold">ALINA VIP India</span>
+            Contact <span className="text-gradient-gold">Gurgaon Escort Service India</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Reserve verified escorts,{' '}
@@ -170,7 +174,7 @@ export default function ContactPage() {
               {/* Privacy & Discretion Card */}
               <div className="p-6 bg-gradient-to-br from-gold-50 to-amber-50 rounded-2xl border-2 border-gold-200">
                 <h4 className="font-bold text-[#0F172A] text-base mb-3 flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-gold-600" /> ALINA VIP Discretion Guarantee
+                  <ShieldCheck className="w-5 h-5 text-gold-600" /> Gurgaon Escort Service Discretion Guarantee
                 </h4>
                 <ul className="space-y-2 text-xs text-gray-700">
                   <li className="flex items-center gap-2">
@@ -269,11 +273,11 @@ export default function ContactPage() {
         <div className="container-luxury max-w-4xl">
           <div className="prose-luxury bg-[#FDFBF7] p-8 md:p-12 rounded-2xl border border-gold-200/60 shadow-sm">
             <h2 className="text-3xl font-bold text-[#0F172A] mb-6 font-serif">
-              How to Book Escort Service in Gurgaon with ALINA VIP
+              How to Book Escort Service in Gurgaon with Gurgaon Escort Service
             </h2>
             <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
               <p>
-                Booking escort service with <strong>ALINA VIP</strong> is designed to be effortless, sophisticated, and completely discreet. We respect your schedule and privacy at every stage of the engagement.
+                Booking escort service with <strong>Gurgaon Escort Service</strong> is designed to be effortless, sophisticated, and completely discreet. We respect your schedule and privacy at every stage of the engagement.
               </p>
               <div className="space-y-4 my-6">
                 <div className="flex items-start gap-4">
@@ -353,7 +357,7 @@ export default function ContactPage() {
                   Zero-Trace Privacy &amp; Data Safeguards
                 </h3>
                 <p className="text-sm text-gray-700 leading-relaxed">
-                  Discretion is the core tenet of ALINA VIP. We understand that our clientele includes high-ranking corporate leaders, diplomats, entrepreneurs, and discerning individuals who require total confidentiality. We implement an ephemeral data workflow: your contact information, messages, and meeting specifics are never stored in permanent databases, marketing mailing lists, or shared with third parties. Once your engagement concludes, all communication history is promptly purged.
+                  Discretion is the core tenet of Gurgaon Escort Service. We understand that our clientele includes high-ranking corporate leaders, diplomats, entrepreneurs, and discerning individuals who require total confidentiality. We implement an ephemeral data workflow: your contact information, messages, and meeting specifics are never stored in permanent databases, marketing mailing lists, or shared with third parties. Once your engagement concludes, all communication history is promptly purged.
                 </p>
                 <p className="text-sm text-gray-700 leading-relaxed">
                   Furthermore, our escorts arrive in unmarked, private executive vehicles. They dress in sophisticated contemporary attire appropriate for luxury hotel lobbies or fine residential buildings, ensuring your privacy is safeguarded from doorstep to suite.
@@ -376,7 +380,7 @@ export default function ContactPage() {
                   Transparent Pricing &amp; Cash on Delivery Protection
                 </h3>
                 <p className="text-sm text-gray-700 leading-relaxed">
-                  The escort industry in Gurgaon unfortunately has unregulated actors who demand advance booking deposits or gift cards and then fail to deliver. At ALINA VIP, we maintain an ethical, transparent booking process. We support direct Cash on Delivery (COD), allowing you to verify your call girl upon arrival before settling the booking fee. No hidden surcharges, no misleading photos, and no advance payment traps.
+                  The escort industry in Gurgaon unfortunately has unregulated actors who demand advance booking deposits or gift cards and then fail to deliver. At Gurgaon Escort Service, we maintain an ethical, transparent booking process. We support direct Cash on Delivery (COD), allowing you to verify your call girl upon arrival before settling the booking fee. No hidden surcharges, no misleading photos, and no advance payment traps.
                 </p>
               </div>
 

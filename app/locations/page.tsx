@@ -14,15 +14,21 @@ import { locations } from '@/data/locations';
 import { isLocationRedirect } from '@/data/locationManifest';
 
 export const metadata: Metadata = {
-  title: 'Gurgaon Escort Service Locations & Hotel Outcall Directory | ALINA VIP India',
+  title: 'Gurgaon Escort Service Locations & Hotel Outcall Directory | Gurgaon Escort Service India',
   description:
     'Find verified VIP escorts and luxury call girls across Gurgaon, Aerocity, and Delhi NCR. Cyber City, DLF Phases 1-5, Golf Course Road & Sohna Road. 20-30 min hotel outcall.',
+  keywords: [
+    `escort service locations Gurgaon`,
+    `call girl service areas Gurgaon`,
+    `outcall escort locations`,
+    ...(siteConfig.keywords || []).slice(0, 15),
+  ],
   alternates: {
     canonical: `${siteConfig.url}/locations`,
     languages: getAlternateLanguages('/locations'),
   },
   openGraph: {
-    title: 'Gurgaon Escort Service Locations & Hotel Outcall Directory | ALINA VIP India',
+    title: 'Gurgaon Escort Service Locations & Hotel Outcall Directory | Gurgaon Escort Service India',
     description:
       'Find verified VIP escorts and luxury call girls across Gurgaon, Aerocity, and Delhi NCR. Cyber City, DLF Phases 1-5, Golf Course Road & Sohna Road. 20-30 min hotel outcall.',
     url: `${siteConfig.url}/locations`,
@@ -50,7 +56,7 @@ export default function LocationsPage() {
 
           {/* Clean Informative Lead */}
           <p className="text-charcoal-300 max-w-3xl mx-auto text-base md:text-lg leading-relaxed font-light">
-            ALINA VIP India coordinates discreet, verified escort services across all premier residential sectors, corporate hubs, and five-star hospitality districts in Gurgaon, Aerocity, and Delhi NCR. Select your district below for verified call girls with 20 to 30-minute outcall dispatch.
+            Gurgaon Escort Service India coordinates discreet, verified escort services across all premier residential sectors, corporate hubs, and five-star hospitality districts in Gurgaon, Aerocity, and Delhi NCR. Select your district below for verified call girls with 20 to 30-minute outcall dispatch.
           </p>
 
           {(() => {
@@ -83,7 +89,7 @@ export default function LocationsPage() {
               <div className="gold-divider mb-8" />
               <div className="space-y-4 text-charcoal-300 leading-relaxed text-sm md:text-base">
                 <p>
-                  ALINA VIP caters extensively to guests staying at prestigious five-star hotel properties across Gurgaon and Delhi NCR. Our verified models are adept in five-star hotel etiquette, arriving discreetly dressed in tasteful attire suitable for executive lobbies and luxury suites.
+                  Gurgaon Escort Service caters extensively to guests staying at prestigious five-star hotel properties across Gurgaon and Delhi NCR. Our verified models are adept in five-star hotel etiquette, arriving discreetly dressed in tasteful attire suitable for executive lobbies and luxury suites.
                 </p>
                 <p>
                   We provide continuous outcall service to premier hotel clusters including The Oberoi Gurgaon, The Trident, The Leela Ambience, Grand Hyatt Gurgaon, ITC Grand Bharat, The Westin Gurgaon, and JW Marriott Aerocity. For location-specific hotel etiquette and booking advice, review our{' '}
@@ -148,7 +154,7 @@ export default function LocationsPage() {
           <div className="max-w-4xl mx-auto prose-luxury">
             <h2>Comprehensive Escort Services Across Gurgaon &amp; Delhi NCR</h2>
             <p>
-              At ALINA VIP, our mission is to provide accessible, seamless, and thoroughly discreet escort service throughout Gurgaon and the broader National Capital Region. With comprehensive dedicated location guides, our network blankets every prominent business enclave, high-density residential phase, and luxury hotel corridor.
+              At Gurgaon Escort Service, our mission is to provide accessible, seamless, and thoroughly discreet escort service throughout Gurgaon and the broader National Capital Region. With comprehensive dedicated location guides, our network blankets every prominent business enclave, high-density residential phase, and luxury hotel corridor.
             </p>
             <p>
               From corporate executives attending summits in <Link href="/locations/cyber-city" className="text-gold-400 hover:underline">Cyber City</Link> and <Link href="/locations/golf-course-road" className="text-gold-400 hover:underline">Golf Course Road</Link>, to residents seeking private escort services in <Link href="/locations/dlf-phase-1" className="text-gold-400 hover:underline">DLF Phase 1</Link> or <Link href="/locations/dlf-phase-5" className="text-gold-400 hover:underline">DLF Phase 5</Link>, our verified <Link href="/services" className="text-gold-400 hover:underline">call girls</Link> provide the perfect blend of glamour, emotional intelligence, and discretion.

@@ -16,17 +16,21 @@ import CTASection from '@/components/CTASection';
 import { siteConfig, generalFaqs, getAlternateLanguages } from '@/data/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Gurgaon Escort Service FAQs | Booking & Verification Guide | ALINA VIP India',
+  title: 'Gurgaon Escort Service FAQs | Booking & Verification Guide | Gurgaon Escort Service India',
   description:
-    'Get authoritative answers to client questions regarding VIP call girls, Russian escorts, discretion protocols, hotel outcall procedures, and rates with ALINA VIP India.',
+    'Get authoritative answers to client questions regarding VIP call girls, Russian escorts, discretion protocols, hotel outcall procedures, and rates with Gurgaon Escort Service India.',
+  keywords: [
+    ...siteConfig.keywords.slice(0, 10),
+    'escort booking faq, rates, cod questions, hotel outcall faq',
+  ],
   alternates: {
     canonical: `${siteConfig.url}/faq`,
     languages: getAlternateLanguages('/faq'),
   },
   openGraph: {
-    title: 'Gurgaon Escort Service FAQs | Booking & Verification Guide | ALINA VIP India',
+    title: 'Gurgaon Escort Service FAQs | Booking & Verification Guide | Gurgaon Escort Service India',
     description:
-      'Get authoritative answers to client questions regarding VIP call girls, Russian escorts, discretion protocols, hotel outcall procedures, and rates with ALINA VIP India.',
+      'Get authoritative answers to client questions regarding VIP call girls, Russian escorts, discretion protocols, hotel outcall procedures, and rates with Gurgaon Escort Service India.',
     url: `${siteConfig.url}/faq`,
     type: 'website',
   },
@@ -79,7 +83,7 @@ export default function FAQPage() {
             <Link href="/category/russian-call-girls" className="text-gold-400 hover:underline font-medium">
               Russian call girls
             </Link>
-            , and verified outcall protocols with ALINA VIP India.
+            , and verified outcall protocols with Gurgaon Escort Service India.
           </p>
           <div className="gold-divider mx-auto mt-8" />
         </div>
@@ -143,7 +147,7 @@ export default function FAQPage() {
                   </h3>
                   <div className="gold-divider mb-4" />
                   <p className="text-gray-700 leading-relaxed text-sm md:text-base">
-                    At <strong>ALINA VIP</strong>, our goal is to deliver an unforgettable escort service experience built upon mutual courtesy, elegance, and unyielding privacy. Whether you are reserving an outcall escort for a high-profile corporate function, a romantic dinner date on Golf Course Road, or private suite relaxation in Cyber City, adhering to standard etiquette ensures seamless satisfaction.
+                    At <strong>Gurgaon Escort Service</strong>, our goal is to deliver an unforgettable escort service experience built upon mutual courtesy, elegance, and unyielding privacy. Whether you are reserving an outcall escort for a high-profile corporate function, a romantic dinner date on Golf Course Road, or private suite relaxation in Cyber City, adhering to standard etiquette ensures seamless satisfaction.
                   </p>
                 </div>
 
@@ -296,7 +300,7 @@ export default function FAQPage() {
               {/* Trust Features Card */}
               <div className="bg-gold-50/80 p-6 rounded-2xl border border-gold-200/80 shadow-sm">
                 <h3 className="font-bold text-[#0F172A] text-center mb-4 font-serif text-lg">
-                  Why Choose ALINA VIP
+                  Why Choose Gurgaon Escort Service
                 </h3>
                 <div className="space-y-3 text-sm text-gray-700">
                   <div className="flex items-center gap-3">

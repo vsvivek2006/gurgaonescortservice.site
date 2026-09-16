@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     notFound();
   }
 
-  const title = `${post.title} | ALINA VIP India`;
+  const title = `${post.title} | Gurgaon Escort Service India`;
   const description = post.excerpt;
   const canonicalUrl = `${siteConfig.url}/blog/${post.slug}`;
   const ogImageUrl = post.image
@@ -47,6 +47,12 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
   return {
     title,
+    keywords: [
+      post.title.toLowerCase(),
+      post.category.toLowerCase(),
+      `${post.category.toLowerCase()} guide`,
+      ...(siteConfig.keywords || []).slice(0, 10),
+    ],
     description,
     alternates: {
       canonical: canonicalUrl,

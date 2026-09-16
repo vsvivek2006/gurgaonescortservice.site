@@ -11,17 +11,21 @@ import { blogPosts, blogCategories } from '@/data/blogs';
 import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Gurgaon Escorts & Call Girls Blog | ALINA VIP India',
+  title: 'Gurgaon Escorts & Call Girls Blog | Gurgaon Escort Service India',
   description:
-    'Read the official ALINA VIP India blog for insights on VIP call girls, Russian escorts in Gurgaon, five-star hotel guides, escort girls etiquette, and luxury nightlife.',
+    'Read the official Gurgaon Escort Service India blog for insights on VIP call girls, Russian escorts in Gurgaon, five-star hotel guides, escort girls etiquette, and luxury nightlife.',
+  keywords: [
+    ...siteConfig.keywords.slice(0, 10),
+    'blog guides, nightlife tips, 5 star hotel dining',
+  ],
   alternates: {
     canonical: `${siteConfig.url}/blog`,
     languages: getAlternateLanguages('/blog'),
   },
   openGraph: {
-    title: 'Gurgaon Escorts & Call Girls Blog | ALINA VIP India',
+    title: 'Gurgaon Escorts & Call Girls Blog | Gurgaon Escort Service India',
     description:
-      'Read the official ALINA VIP India blog for insights on VIP call girls, Russian escorts in Gurgaon, five-star hotel guides, escort girls etiquette, and luxury nightlife.',
+      'Read the official Gurgaon Escort Service India blog for insights on VIP call girls, Russian escorts in Gurgaon, five-star hotel guides, escort girls etiquette, and luxury nightlife.',
     url: `${siteConfig.url}/blog`,
     type: 'website',
   },
@@ -56,7 +60,7 @@ export default function BlogPage() {
             Gurgaon Call Girls &amp; <span className="text-gradient-gold">Escort Girls Journal</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Authoritative insights on luxury escort services in Gurgaon, five-star hotel outcall etiquette, nightlife recommendations, and verified call girls booking advice from ALINA VIP India.
+            Authoritative insights on luxury escort services in Gurgaon, five-star hotel outcall etiquette, nightlife recommendations, and verified call girls booking advice from Gurgaon Escort Service India.
           </p>
           <div className="gold-divider mx-auto mt-8" />
         </div>
@@ -179,11 +183,11 @@ export default function BlogPage() {
         <div className="container-luxury max-w-4xl">
           <div className="prose-luxury bg-white p-8 md:p-12 rounded-2xl border border-gold-200/60 shadow-sm">
             <h2 className="text-3xl font-bold text-[#0F172A] mb-6 font-serif">
-              About the ALINA VIP Editorial Desk
+              About the Gurgaon Escort Service Editorial Desk
             </h2>
             <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
               <p>
-                The <strong>ALINA VIP</strong> editorial team publishes practical guides on navigating luxury escort services, premium hospitality, and executive nightlife across Gurgaon and the greater NCR region.
+                The <strong>Gurgaon Escort Service</strong> editorial team publishes practical guides on navigating luxury escort services, premium hospitality, and executive nightlife across Gurgaon and the greater NCR region.
               </p>
               <p>
                 From tips on choosing the right escort for high-profile business dinners to comprehensive overviews of five-star suites along Golf Course Road and Cyber City, our articles help clients make informed, discreet decisions.

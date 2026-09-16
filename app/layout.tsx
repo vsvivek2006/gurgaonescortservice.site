@@ -22,7 +22,7 @@ const jost = Jost({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'Escort Service in Gurgaon (Gurugram) | VIP Escorts Service ALINA VIP',
+    default: 'Escort Service in Gurgaon (Gurugram) | VIP Escorts Service Gurgaon Escort Service',
     template: '%s | Gurgaon Escort Service',
   },
   description:
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     url: siteConfig.url,
     siteName: 'Gurgaon Escort Service',
-    title: 'Escort Service in Gurgaon (Gurugram) | VIP Escorts Service ALINA VIP',
+    title: 'Escort Service in Gurgaon (Gurugram) | VIP Escorts Service Gurgaon Escort Service',
     description:
       'Gurgaon Escort Service is the #1 escort service in Gurgaon (Gurugram). Book verified VIP call girls and elite escorts service with 20-30 min 5-star hotel outcall dispatch across DLF, Cyber City, and Golf Course Road.',
     images: [
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Escort Service in Gurgaon (Gurugram) | VIP Escorts Service ALINA VIP',
+    title: 'Escort Service in Gurgaon (Gurugram) | VIP Escorts Service Gurgaon Escort Service',
     description:
       'Gurgaon Escort Service is the #1 escort service in Gurgaon (Gurugram). Book verified VIP call girls and elite escorts service with 20-30 min 5-star hotel outcall dispatch across DLF, Cyber City, and Golf Course Road.',
     images: [`${siteConfig.url}/og-image.jpg`],

@@ -3,8 +3,12 @@ import { TermsPage } from '@/components/LegalPages';
 import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'Terms & Conditions | ALINA VIP Escort Service',
-  description: 'Terms and conditions governing the booking and provision of luxury escort services by ALINA VIP.',
+  title: 'Terms & Conditions | Gurgaon Escort Service Escort Service',
+  description: 'Terms and conditions governing the booking and provision of luxury escort services by Gurgaon Escort Service.',
+  keywords: [
+    ...siteConfig.keywords.slice(0, 10),
+    'terms of service, booking policies, client agreement',
+  ],
   alternates: {
     canonical: `${siteConfig.url}/terms`,
     languages: getAlternateLanguages('/terms'),

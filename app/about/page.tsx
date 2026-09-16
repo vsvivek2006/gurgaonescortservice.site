@@ -20,18 +20,18 @@ import CTASection from '@/components/CTASection';
 import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 
 export const metadata: Metadata = {
-  title: 'About ALINA VIP India | Escort Service in Gurgaon (Gurugram)',
+  title: 'About Gurgaon Escort Service India | Escort Service in Gurgaon (Gurugram)',
   description:
-    'Discover the legacy of ALINA VIP India. Over a decade of excellence providing premier escort service in Gurgaon (Gurugram) with verified call girls, VIP escort girls, and 5-star hotel outcalls.',
+    'Discover the legacy of Gurgaon Escort Service India. Over a decade of excellence providing premier escort service in Gurgaon (Gurugram) with verified call girls, VIP escort girls, and 5-star hotel outcalls.',
   keywords: siteConfig.keywords,
   alternates: {
     canonical: `${siteConfig.url}/about`,
     languages: getAlternateLanguages('/about'),
   },
   openGraph: {
-    title: 'About ALINA VIP India | Escort Service in Gurgaon (Gurugram)',
+    title: 'About Gurgaon Escort Service India | Escort Service in Gurgaon (Gurugram)',
     description:
-      'Discover the legacy of ALINA VIP India. Over a decade of excellence providing premier escort service in Gurgaon (Gurugram) with verified call girls, VIP escort girls, and 5-star hotel outcalls.',
+      'Discover the legacy of Gurgaon Escort Service India. Over a decade of excellence providing premier escort service in Gurgaon (Gurugram) with verified call girls, VIP escort girls, and 5-star hotel outcalls.',
     url: `${siteConfig.url}/about`,
     type: 'website',
   },
@@ -50,10 +50,10 @@ export default function AboutPage() {
         <div className="container-luxury relative z-10">
           <div className="text-center">
             <span className="inline-block px-6 py-2 border border-gold-500/30 rounded-full text-gold-400 text-sm font-semibold tracking-wider uppercase mb-6 bg-gold-500/10 backdrop-blur-sm">
-              ★ About ALINA VIP India
+              ★ About Gurgaon Escort Service India
             </span>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-serif tracking-wide">
-              The Story of <span className="text-gradient-gold">ALINA VIP India</span>
+              The Story of <span className="text-gradient-gold">Gurgaon Escort Service India</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
               Gurgaon (Gurugram)&apos;s leading high-end <Link href="/services" className="text-gold-400 hover:underline font-medium">escorts service</Link>, connecting discerning executives and travellers with authenticated call girls,{' '}
@@ -80,11 +80,11 @@ export default function AboutPage() {
               {/* Welcome Section */}
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-5 font-serif">
-                  Welcome to ALINA VIP –{' '}
+                  Welcome to Gurgaon Escort Service –{' '}
                   <span className="text-gold-600">Gurgaon&apos;s Premier Escort Agency</span>
                 </h2>
                 <p className="text-gray-700 text-lg leading-relaxed mb-4">
-                  <strong>ALINA VIP</strong> is Gurgaon&apos;s leading escort agency, offering a curated{' '}
+                  <strong>Gurgaon Escort Service</strong> is Gurgaon&apos;s leading escort agency, offering a curated{' '}
                   <Link href="/services" className="text-gold-600 hover:underline font-medium">
                     service portfolio
                   </Link>{' '}
@@ -110,10 +110,10 @@ export default function AboutPage() {
                 </h3>
                 <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
                   <p>
-                    <strong>ALINA VIP</strong> was founded with a singular vision: to elevate the escort service experience in Gurgaon by providing a service that is sophisticated, professional, and uncompromising in its commitment to quality and discretion. In an industry often characterised by inconsistency and a lack of professionalism, we saw an opportunity to create something different — an agency that operates with the standards of a luxury hospitality brand.
+                    <strong>Gurgaon Escort Service</strong> was founded with a singular vision: to elevate the escort service experience in Gurgaon by providing a service that is sophisticated, professional, and uncompromising in its commitment to quality and discretion. In an industry often characterised by inconsistency and a lack of professionalism, we saw an opportunity to create something different — an agency that operates with the standards of a luxury hospitality brand.
                   </p>
                   <p>
-                    Our journey began with a simple observation: discerning gentlemen in Gurgaon deserved an escort service that matched their lifestyle and expectations. The city had become one of India&apos;s most cosmopolitan centres, home to business leaders, entrepreneurs, and global executives. Yet the options for verified, quality escorts were limited. <strong>ALINA VIP</strong> was created to fill this gap.
+                    Our journey began with a simple observation: discerning gentlemen in Gurgaon deserved an escort service that matched their lifestyle and expectations. The city had become one of India&apos;s most cosmopolitan centres, home to business leaders, entrepreneurs, and global executives. Yet the options for verified, quality escorts were limited. <strong>Gurgaon Escort Service</strong> was created to fill this gap.
                   </p>
                   <p>
                     From the outset, we made several key decisions that would shape our service philosophy. We decided that every profile in our portfolio would undergo a thorough verification process, ensuring that profiles were genuine and accurate. We committed to complete discretion in all client interactions, recognising that privacy is a fundamental need for our clientele. And we chose to focus on quality over quantity, maintaining a curated selection rather than an exhaustive but inconsistent roster.
@@ -121,10 +121,10 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Why Choose ALINA VIP */}
+              {/* Why Choose Gurgaon Escort Service */}
               <div>
                 <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-6 font-serif">
-                  Why Choose ALINA VIP for Escort Service in Gurgaon?
+                  Why Choose Gurgaon Escort Service for Escort Service in Gurgaon?
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4 p-5 bg-[#FDFBF7] rounded-2xl border border-gold-200/50 hover:shadow-md transition-shadow">
@@ -464,14 +464,14 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* What Makes ALINA VIP Different */}
+              {/* What Makes Gurgaon Escort Service Different */}
               <div>
                 <h3 className="text-2xl md:text-3xl font-bold text-[#0F172A] mb-4 font-serif">
-                  What Makes ALINA VIP Different
+                  What Makes Gurgaon Escort Service Different
                 </h3>
                 <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
                   <p>
-                    In a competitive market, <strong>ALINA VIP</strong> stands apart through a combination of factors that together create a service experience unlike any other in Gurgaon. Our rigorous verification process ensures that every profile is genuine, giving our clients confidence in their choices.
+                    In a competitive market, <strong>Gurgaon Escort Service</strong> stands apart through a combination of factors that together create a service experience unlike any other in Gurgaon. Our rigorous verification process ensures that every profile is genuine, giving our clients confidence in their choices.
                   </p>
                   <p>
                     Our commitment to discretion is comprehensive and multi-layered. We protect client information at every stage of the booking process, train our models in privacy protocols, and design our digital presence without persistent logs. Our 24/7 availability ensures prompt coordination whether for a planned evening or an urgent request.
@@ -486,7 +486,7 @@ export default function AboutPage() {
                 </h3>
                 <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
                   <p>
-                    Safety is a priority at <strong>ALINA VIP</strong>, both for our clients and escorts. Our verification process is designed not only to ensure authenticity but also to establish a secure and respectful environment for all parties.
+                    Safety is a priority at <strong>Gurgaon Escort Service</strong>, both for our clients and escorts. Our verification process is designed not only to ensure authenticity but also to establish a secure and respectful environment for all parties.
                   </p>
                   <p>
                     For our clients, we provide a trustworthy channel to reserve high-profile escorts. Verified photos give you confidence in your selection, and our concierge ensures clear, professional arrangements.
@@ -504,7 +504,7 @@ export default function AboutPage() {
                     Gurgaon has transformed into one of India&apos;s most dynamic financial and corporate capitals. It hosts dozens of Fortune 500 regional headquarters, five-star luxury hotels, high-end dining, and world-class commercial developments.
                   </p>
                   <p>
-                    This cosmopolitan character attracts sophisticated professionals, entrepreneurs, and global travelers who expect exceptional quality. <strong>ALINA VIP</strong> was created to meet this standard, delivering escort services that match the luxury benchmarks of the city itself.
+                    This cosmopolitan character attracts sophisticated professionals, entrepreneurs, and global travelers who expect exceptional quality. <strong>Gurgaon Escort Service</strong> was created to meet this standard, delivering escort services that match the luxury benchmarks of the city itself.
                   </p>
                 </div>
               </div>
@@ -515,7 +515,7 @@ export default function AboutPage() {
                   Reserve VIP Escort Service Today
                 </h3>
                 <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                  Experience verified escort services with <strong>ALINA VIP</strong>. Explore our{' '}
+                  Experience verified escort services with <strong>Gurgaon Escort Service</strong>. Explore our{' '}
                   <Link href="/services" className="text-gold-600 hover:underline font-semibold">
                     escort services
                   </Link>{' '}
@@ -573,8 +573,8 @@ export default function AboutPage() {
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
                     src="/images/about-hero.webp"
-                    alt="ALINA VIP - Luxury Escort Agency Gurgaon"
-                    title="ALINA VIP - Luxury Escort Agency Gurgaon"
+                    alt="Gurgaon Escort Service - Luxury Escort Agency Gurgaon"
+                    title="Gurgaon Escort Service - Luxury Escort Agency Gurgaon"
                     fill
                     sizes="(max-width: 1024px) 100vw, 450px"
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -659,7 +659,7 @@ export default function AboutPage() {
               {/* High-Trust Guarantee Pillars */}
               <div className="bg-[#FDFBF7] p-6 rounded-2xl border border-gold-200/50 space-y-3">
                 <h4 className="text-sm font-bold uppercase tracking-wider text-[#0F172A] flex items-center gap-2">
-                  <HeartHandshake className="w-4 h-4 text-gold-600" /> ALINA VIP Commitment
+                  <HeartHandshake className="w-4 h-4 text-gold-600" /> Gurgaon Escort Service Commitment
                 </h4>
                 <ul className="text-xs text-gray-600 space-y-2">
                   <li className="flex items-center gap-2">

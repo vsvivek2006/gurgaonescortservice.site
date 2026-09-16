@@ -1,0 +1,173 @@
+import type { Metadata } from 'next';
+import { siteConfig, generalFaqs, getAlternateLanguages } from '@/data/siteConfig';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import CTASection from '@/components/CTASection';
+
+import HeroSection from '@/components/home/HeroSection';
+import AboutSection from '@/components/home/AboutSection';
+import WhyChooseUsSection from '@/components/home/WhyChooseUsSection';
+import ServicesCategoriesSection from '@/components/home/ServicesCategoriesSection';
+import LocationsSection from '@/components/home/LocationsSection';
+import HowItWorksSection from '@/components/home/HowItWorksSection';
+import HomeBlogSection from '@/components/home/HomeBlogSection';
+import HomeFaqSection from '@/components/home/HomeFaqSection';
+import ExecutiveGuideSection from '@/components/home/ExecutiveGuideSection';
+import HomeContactSection from '@/components/home/HomeContactSection';
+
+export const metadata: Metadata = {
+  title: 'Escort Service in Gurgaon (Gurugram) | VIP Escorts Service Gurgaon',
+  description:
+    'Gurgaon Escort Service provides premier escort service in Gurgaon (Gurugram). Verified VIP call girls, top escorts service, and discreet 20-30 min 5-star hotel outcalls across DLF, Cyber City, and Golf Course Road.',
+  keywords: siteConfig.keywords,
+  alternates: {
+    canonical: siteConfig.url,
+    languages: getAlternateLanguages(''),
+  },
+  openGraph: {
+    title: 'Escort Service in Gurgaon (Gurugram) | VIP Escorts Service Gurgaon',
+    description:
+      'Gurgaon Escort Service provides premier escort service in Gurgaon (Gurugram). Verified VIP call girls, top escorts service, and discreet 20-30 min 5-star hotel outcalls across DLF, Cyber City, and Golf Course Road.',
+    url: siteConfig.url,
+    type: 'website',
+  },
+};
+
+export default function HomePage() {
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: siteConfig.name,
+    alternateName: [
+      'ALINA VIP Escorts Service Gurgaon',
+      'ALINA VIP Escort Service Gurugram',
+    ],
+    url: siteConfig.url,
+    phone: siteConfig.phone,
+    email: siteConfig.email,
+    areaServed: ['Gurgaon', 'Gurugram', 'Delhi NCR', 'DLF Phase 1-5', 'Cyber City', 'Golf Course Road'],
+    knowsAbout: [
+      'Escort Service in Gurgaon',
+      'Escorts Service in Gurgaon',
+      'Escort Service in Gurugram',
+      'VIP Call Girls in Gurgaon',
+    ],
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'DLF Phase 3, Golf Course Road',
+      addressLocality: 'Gurgaon',
+      addressRegion: 'Haryana',
+      postalCode: '122002',
+      addressCountry: 'IN',
+    },
+  };
+
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: siteConfig.name,
+    url: siteConfig.url,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${siteConfig.url}/blog?search={search_term_string}`,
+      'query-input': 'required name=search_term_string',
+    },
+  };
+
+  const localBusinessSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: siteConfig.name,
+    alternateName: 'ALINA VIP Escort Service in Gurgaon Gurugram',
+    description: 'Premier VIP escort service in Gurgaon (Gurugram) providing discreet 5-star hotel outcalls with verified call girls.',
+    image: `${siteConfig.url}/og-image.jpg`,
+    url: siteConfig.url,
+    telephone: siteConfig.phone,
+    priceRange: '$$$',
+    currenciesAccepted: 'INR',
+    paymentAccepted: 'Cash, Cash on Delivery',
+    areaServed: [
+      {
+        '@type': 'City',
+        name: 'Gurgaon',
+      },
+      {
+        '@type': 'City',
+        name: 'Gurugram',
+      },
+    ],
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'DLF Phase 3, Golf Course Road',
+      addressLocality: 'Gurgaon (Gurugram)',
+      addressRegion: 'Haryana',
+      postalCode: '122002',
+      addressCountry: 'IN',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 28.4595,
+      longitude: 77.0266,
+    },
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: [
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+        'Sunday',
+      ],
+      opens: '00:00',
+      closes: '23:59',
+    },
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: generalFaqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+
+  const homeSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organizationSchema,
+      websiteSchema,
+      localBusinessSchema,
+      faqSchema,
+    ],
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(homeSchema),
+        }}
+      />
+
+      <HeroSection />
+      <AboutSection />
+      <WhyChooseUsSection />
+      <ServicesCategoriesSection />
+      <LocationsSection />
+      <HowItWorksSection />
+      <TestimonialsSection theme="light" />
+      <HomeBlogSection />
+      <HomeFaqSection />
+      <ExecutiveGuideSection />
+      <HomeContactSection />
+      <CTASection />
+    </>
+  );
+}

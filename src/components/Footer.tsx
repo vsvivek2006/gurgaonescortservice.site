@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Phone, MessageCircle, MapPin, Mail, Instagram, Twitter, Facebook } from 'lucide-react';
 import { siteConfig } from '@/data/siteConfig';
 import { categories } from '@/data/categories';
@@ -12,13 +12,10 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <h3 className="font-serif text-2xl font-medium text-white mb-2">
-              ALINA <span className="text-gold-500 font-light">VIP</span>
+              Gurgaon <span className="text-gold-500 font-light">Escorts</span>
             </h3>
             <p className="text-sm text-charcoal-400 leading-relaxed mb-6">
-              {siteConfig.tagline}. Premium <Link to="/services" className="text-gold-400 hover:text-gold-300 transition-colors">escort service in Gurgaon</Link> 
-              with verified <Link to="/call-girls" className="text-gold-400 hover:text-gold-300 transition-colors">call girls</Link>, 
-              <Link to="/russian-escorts" className="text-gold-400 hover:text-gold-300 transition-colors"> Russian escorts</Link>, and 
-              <Link to="/model-escorts" className="text-gold-400 hover:text-gold-300 transition-colors"> model escorts</Link>.
+              {siteConfig.tagline}. Premium luxury escort services in Gurgaon for discerning gentlemen.
             </p>
             <div className="flex gap-4">
               {siteConfig.socialLinks.map((social) => {
@@ -46,8 +43,7 @@ export default function Footer() {
               {[
                 { name: 'Home', path: '/' },
                 { name: 'About Us', path: '/about' },
-                { name: 'Escort Services', path: '/services' },
-                { name: 'Call Girls', path: '/call-girls' },
+                { name: 'Our Services', path: '/services' },
                 { name: 'Gallery', path: '/gallery' },
                 { name: 'Blog', path: '/blog' },
                 { name: 'Contact', path: '/contact' },
@@ -55,7 +51,7 @@ export default function Footer() {
               ].map((link) => (
                 <li key={link.path}>
                   <Link
-                    to={link.path}
+                    href={link.path}
                     className="text-sm text-charcoal-400 hover:text-gold-500 transition-colors"
                   >
                     {link.name}
@@ -67,12 +63,12 @@ export default function Footer() {
 
           {/* Categories */}
           <div>
-            <h4 className="font-sans text-xs tracking-ultra uppercase text-gold-500 mb-5">Call Girls Categories</h4>
-            <ul className="space-y-3">
-              {categories.slice(0, 7).map((cat) => (
+            <h4 className="font-sans text-xs tracking-ultra uppercase text-gold-500 mb-5">Service Categories</h4>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-x-4 gap-y-2.5">
+              {categories.map((cat) => (
                 <li key={cat.slug}>
                   <Link
-                    to={`/category/${cat.slug}`}
+                    href={`/category/${cat.slug}`}
                     className="text-sm text-charcoal-400 hover:text-gold-500 transition-colors"
                   >
                     {cat.name}
@@ -123,19 +119,68 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Locations strip */}
-        <div className="border-t border-charcoal-700 pt-8 mb-8">
-          <h4 className="font-sans text-xs tracking-ultra uppercase text-gold-500 mb-4">Escort Service Locations</h4>
-          <div className="flex flex-wrap gap-x-4 gap-y-2">
-            {locations.map((loc) => (
-              <Link
-                key={loc.slug}
-                to={`/locations/${loc.slug}`}
-                className="text-xs text-charcoal-500 hover:text-gold-500 transition-colors"
-              >
-                {loc.name} Call Girls
-              </Link>
-            ))}
+        {/* Primary Service Locations Strip */}
+        <div className="border-t border-charcoal-700 pt-8 mb-8 space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h4 className="font-sans text-xs tracking-ultra uppercase text-gold-500">Service Locations Directory</h4>
+              <p className="text-xs text-charcoal-400 mt-1">
+                24/7 five-star hotel and private residential outcalls across Delhi NCR.
+              </p>
+            </div>
+            <Link
+              href="/locations"
+              className="text-xs text-gold-400 hover:text-gold-300 font-semibold underline underline-offset-4 flex items-center gap-1.5 self-start sm:self-auto"
+            >
+              Explore All 108 Locations &amp; Sectors &rarr;
+            </Link>
+          </div>
+
+          <div>
+            <p className="text-[11px] uppercase tracking-wider text-charcoal-400 font-semibold mb-2.5">
+              Regional Master Hubs
+            </p>
+            <div className="flex flex-wrap gap-x-5 gap-y-2">
+              {locations
+                .filter((l) => l.isHub)
+                .map((loc) => (
+                  <Link
+                    key={loc.slug}
+                    href={`/locations/${loc.slug}`}
+                    className="text-xs text-gold-400/90 hover:text-gold-300 font-medium transition-colors"
+                  >
+                    {loc.name}
+                  </Link>
+                ))}
+            </div>
+          </div>
+
+          <div>
+            <p className="text-[11px] uppercase tracking-wider text-charcoal-400 font-semibold mb-2.5">
+              Key Business Corridors &amp; Hospitality Districts
+            </p>
+            <div className="flex flex-wrap gap-x-5 gap-y-2">
+              {[
+                { name: 'Cyber City', slug: 'cyber-city' },
+                { name: 'Golf Course Road', slug: 'golf-course-road' },
+                { name: 'DLF Phase 1', slug: 'dlf-phase-1' },
+                { name: 'DLF Phase 2', slug: 'dlf-phase-2' },
+                { name: 'DLF Phase 5', slug: 'dlf-phase-5' },
+                { name: 'Aerocity', slug: 'aerocity' },
+                { name: 'MG Road', slug: 'mg-road' },
+                { name: 'Sohna Road', slug: 'sohna-road' },
+                { name: 'Sushant Lok', slug: 'sushant-lok' },
+                { name: 'Sector 29', slug: 'sector-29' },
+              ].map((corridor) => (
+                <Link
+                  key={corridor.slug}
+                  href={`/locations/${corridor.slug}`}
+                  className="text-xs text-charcoal-400 hover:text-gold-400 transition-colors"
+                >
+                  {corridor.name}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -145,9 +190,9 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Link to="/privacy-policy" className="text-xs text-charcoal-500 hover:text-gold-500 transition-colors">Privacy Policy</Link>
-            <Link to="/disclaimer" className="text-xs text-charcoal-500 hover:text-gold-500 transition-colors">Disclaimer</Link>
-            <Link to="/terms" className="text-xs text-charcoal-500 hover:text-gold-500 transition-colors">Terms &amp; Conditions</Link>
+            <Link href="/privacy-policy" prefetch={false} className="text-xs text-charcoal-500 hover:text-gold-500 transition-colors">Privacy Policy</Link>
+            <Link href="/disclaimer" prefetch={false} className="text-xs text-charcoal-500 hover:text-gold-500 transition-colors">Disclaimer</Link>
+            <Link href="/terms" prefetch={false} className="text-xs text-charcoal-500 hover:text-gold-500 transition-colors">Terms &amp; Conditions</Link>
           </div>
         </div>
 

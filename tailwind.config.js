@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./app/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
@@ -30,9 +30,8 @@ export default {
         },
       },
       fontFamily: {
-        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-        sans: ['"Jost"', 'system-ui', 'sans-serif'],
-        script: ['"Great Vibes"', 'cursive'],
+        serif: ['var(--font-playfair)', '"Playfair Display"', 'Georgia', 'serif'],
+        sans: ['var(--font-jost)', '"Jost"', 'system-ui', 'sans-serif'],
       },
       letterSpacing: {
         widest: '0.2em',

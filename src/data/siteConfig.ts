@@ -1,13 +1,56 @@
 export const siteConfig = {
-  name: 'ALINA VIP',
+  name: 'Gurgaon Escort Service',
   phone: '+91-9996265679',
   phoneDisplay: '+91 99962 65679',
   whatsapp: '919996265679',
   email: 'contact@gurgaonescortservice.site',
   address: 'DLF Phase 3, Golf Course Road, Gurgaon, Haryana 122002, India',
-  url: 'https://gurgaonescortservice.site',
-  tagline: 'Premium Escort Service in Gurgaon',
-  description: 'ALINA VIP offers premium escort service in Gurgaon with verified call girls, Russian escorts, VIP escorts, and model escorts. Discreet service available 24/7.',
+  url: 'https://www.gurgaonescortservice.site',
+  domain: 'www.gurgaonescortservice.site',
+  tagline: 'Escort Service in Gurgaon (Gurugram) | VIP Escorts Service',
+  description: 'Gurgaon Escort Service by ALINA VIP is the leading escort service in Gurgaon (Gurugram). Providing 100% verified VIP escorts service, high-profile call girls, and discreet 20-30 min 5-star hotel and residence outcalls across DLF, Cyber City, and Golf Course Road.',
+  keywords: [
+    'escort service in gurgaon',
+    'escorts service in gurgaon',
+    'escort service in gurugram',
+    'escorts service in gurugram',
+    'escort service in gurugaon',
+    'escorts service in gurugaon',
+    'gurgaon escort service',
+    'gurugram escort service',
+    'vip escorts service in gurgaon',
+    'luxury escort service gurgaon',
+    'call girls in gurgaon',
+    'call girls in gurugram',
+    'call girls gurgaon',
+    'call girls gurugram',
+    'escorts in gurgaon',
+    'escorts in gurugram',
+    'escort agency gurgaon',
+    'escort agency in gurugram',
+    'hotel outcall escort service gurgaon',
+    'russian escort service in gurgaon',
+    'russian call girls in gurgaon',
+    'russian escorts in gurugram',
+    'vip call girls in gurgaon',
+    'vip call girls in gurugram',
+    'independent escorts in gurgaon',
+    'independent call girls in gurugram',
+    'cash on delivery escort service gurgaon',
+    'cod call girls in gurgaon',
+    'dlf phase 1 escort service',
+    'dlf phase 2 escorts service',
+    'dlf phase 3 escort service',
+    'cyber city call girls',
+    'cyber city escort service',
+    'golf course road escorts',
+    'golf course extension road call girls',
+    'sohna road escort service',
+    'mg road call girls gurgaon',
+    '5 star hotel escorts gurgaon',
+    'leela ambience gurgaon escorts',
+    'oberoi gurgaon call girls',
+  ],
   socialLinks: [
     { name: 'Instagram', url: 'https://instagram.com/gurgaonescortservice', icon: 'Instagram' },
     { name: 'Twitter', url: 'https://twitter.com/gurgaonescort', icon: 'Twitter' },
@@ -15,53 +58,38 @@ export const siteConfig = {
   ],
 };
 
+export function getAlternateLanguages(path: string = '') {
+  const cleanPath = path ? (path.startsWith('/') ? path : `/${path}`) : '';
+  return {
+    'en-IN': `${siteConfig.url}${cleanPath}`,
+    'en': `${siteConfig.url}${cleanPath}`,
+    'x-default': `${siteConfig.url}${cleanPath}`,
+  };
+}
+
 export const generalFaqs = [
   {
-    question: 'What is ALINA VIP?',
-    answer: 'ALINA VIP is a premium escort service based in Gurgaon, India. We provide verified call girls, Russian escorts, VIP escorts, and model escorts for social events, dinner dates, travel, and private engagements. Our escort service is designed for discerning gentlemen who value discretion, quality, and sophistication.',
+    question: 'How do I book an escort service in Gurgaon with Gurgaon Escort Service?',
+    answer: 'Booking an escort service in Gurgaon with Gurgaon Escort Service is simple and 100% confidential. Call our booking desk directly at +91-9996265679 or WhatsApp us with your preferred location, timing, and escort preferences. Our concierge confirms availability within minutes and coordinates discreet outcall dispatch to your luxury hotel or residence.',
   },
   {
-    question: 'How do I book a call girl?',
-    answer: 'Booking a call girl is simple. You can call us directly at +91-9996265679 or fill out the contact form on our website. Our booking team will confirm availability, discuss your requirements, and arrange everything discreetly for escort service. We recommend booking 2-3 hours in advance when possible.',
+    question: 'Are all call girl and escort profiles verified with real photos?',
+    answer: 'Yes, 100%. Every profile published on our portal undergoes rigorous in-person photo and identity verification. We enforce an uncompromising zero-catfish policy. The model who arrives at your suite will match the authentic photographs and profile details you selected.',
   },
   {
-    question: 'Are all call girls verified?',
-    answer: 'Yes, every call girl on ALINA VIP undergoes a thorough verification process. We verify identity, photos, and background to ensure authenticity and quality. This process is fundamental to our commitment to providing a safe and premium escort service experience for our clients.',
+    question: 'How fast can an escort arrive at Gurgaon hotels or Cyber City residences?',
+    answer: 'Our average outcall arrival time is 20 to 30 minutes across DLF Phase 1–5, Cyber City, Golf Course Road, Golf Course Extension, Sohna Road, and MG Road. We maintain a strategically positioned fleet across Gurugram luxury corridors for rapid response.',
   },
   {
-    question: 'Is the escort service discreet and confidential?',
-    answer: 'Absolutely. Discretion and confidentiality are the cornerstones of our escort service. All client information is kept strictly private and never shared with third parties. Our call girls are trained to maintain the highest standards of discretion in all interactions.',
+    question: 'Is client confidentiality and privacy protected?',
+    answer: 'Yes, absolute discretion and confidentiality are guaranteed. All client details are strictly protected with zero digital footprint. Our verified VIP escorts arrive in unmarked executive vehicles and observe the strictest privacy standards for five-star hotel suites and private residences across Gurgaon.',
   },
   {
-    question: 'What areas do you cover for escort service?',
-    answer: 'We cover all major areas of Gurgaon including DLF Phases 1-5, Cyber City, MG Road, Golf Course Road, Sohna Road, Sushant Lok, and all major sectors. We also serve Dwarka and Mahipalpur in New Delhi. For other locations, please contact us directly for call girls service.',
+    question: 'Do you offer cash on delivery (COD) payment for escort service in Gurgaon?',
+    answer: 'Yes, we support cash on delivery directly upon your escort’s arrival. We believe in transparent, honest service without deceptive advance fee demands. You may inspect and confirm your escort before settling the agreed service fee in person.',
   },
   {
-    question: 'What are your operating hours for call girls?',
-    answer: 'ALINA VIP operates 24 hours a day, 7 days a week. We understand that our clients have busy and varied schedules, so we are always available to accommodate your needs for escort service. You can reach us at any time for call girls booking and inquiries.',
-  },
-  {
-    question: 'What types of call girls are available?',
-    answer: 'We offer a diverse selection of call girls including VIP escorts, Russian escorts, model escorts, independent call girls, college girls, housewife escorts, air hostess escorts, celebrity escorts, and travel escorts. Each category page provides detailed information about the type of call girl available for escort service.',
-  },
-  {
-    question: 'Can I book a call girl for travel?',
-    answer: 'Yes, several of our call girls are available for domestic and international travel. Whether you need a travel escort for a business trip, a weekend getaway, or an extended holiday, we can arrange the right companion for your journey. Please contact us with your travel plans for escort service.',
-  },
-  {
-    question: 'What are the rates for your escort service?',
-    answer: 'Our rates vary based on the call girl, the duration of the booking, and the type of engagement. We offer competitive rates that reflect the premium quality of our escort service. Please call us at +91-9996265679 for current rates and packages.',
-  },
-  {
-    question: 'How do I pay for the escort service?',
-    answer: 'We accept multiple payment methods for your convenience, including cash and digital payments. Specific payment options can be discussed with our booking team when you call for call girls booking. All transactions are handled discreetly.',
-  },
-  {
-    question: 'Can I request a specific call girl?',
-    answer: 'Yes, you can request a specific call girl based on availability. We recommend calling in advance to ensure your preferred escort is available. If your first choice is not available, our team can recommend suitable alternatives based on your preferences for escort service.',
-  },
-  {
-    question: 'What if I need to cancel or reschedule my call girl booking?',
-    answer: 'We understand that plans can change. Please inform us as early as possible if you need to cancel or reschedule your escort service booking. Our cancellation policy is fair and designed to accommodate genuine situations. Contact our booking team for specific terms.',
+    question: 'Which 5-star hotels in Gurgaon do you provide outcall escorts to?',
+    answer: 'Our outcall escort service regularly dispatches to premier 5-star hotels including The Oberoi, The Trident, The Leela Ambience, Grand Hyatt Gurgaon, and ITC Grand Bharat. When booking, provide your hotel name and room or suite number. Our VIP escorts arrive dressed in elegant, understated attire that blends seamlessly with upscale hotel environments, maintaining absolute discretion upon entry.',
   },
 ];

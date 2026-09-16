@@ -1,9 +1,11 @@
-User-agent: *
+User-Agent: *
 Allow: /
 Disallow: /api/
-
-# Crawl-delay
 Crawl-delay: 1
 
-# Sitemap
-Sitemap: https://gurgaonescortservice.site/sitemap.xml
+Sitemap: https://www.gurgaonescortservice.site/sitemap.xml
+Sitemap: https://www.gurgaonescortservice.site/sitemap-index.xml
+Sitemap: https://www.gurgaonescortservice.site/sitemap-locations.xml
+Sitemap: https://www.gurgaonescortservice.site/sitemap-categories.xml
+Sitemap: https://www.gurgaonescortservice.site/sitemap-blogs.xml
+Sitemap: https://www.gurgaonescortservice.site/sitemap-pages.xml

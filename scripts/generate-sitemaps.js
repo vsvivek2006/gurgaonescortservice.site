@@ -9,7 +9,7 @@ const rootDir = path.resolve(__dirname, '..');
 const publicDir = path.join(rootDir, 'public');
 
 // 1. Read Base URL from siteConfig
-let baseUrl = 'https://www.gurgaonescortservice.site';
+let baseUrl = 'https://alinavip.in';
 try {
   const configContent = fs.readFileSync(path.join(rootDir, 'src/data/siteConfig.ts'), 'utf8');
   const urlMatch = configContent.match(/url:\s*'([^']+)'/);
@@ -61,6 +61,11 @@ const staticPages = [
   { path: '', priority: '1.0', changefreq: 'daily' },
   { path: '/services', priority: '0.9', changefreq: 'daily' },
   { path: '/locations', priority: '0.9', changefreq: 'daily' },
+  { path: '/rates', priority: '0.9', changefreq: 'daily' },
+  { path: '/hotels', priority: '0.9', changefreq: 'daily' },
+  { path: '/categories', priority: '0.9', changefreq: 'daily' },
+  { path: '/escorts', priority: '0.9', changefreq: 'daily' },
+  { path: '/phone-number', priority: '0.9', changefreq: 'daily' },
   { path: '/about', priority: '0.8', changefreq: 'weekly' },
   { path: '/gallery', priority: '0.8', changefreq: 'weekly' },
   { path: '/contact', priority: '0.8', changefreq: 'weekly' },

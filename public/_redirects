@@ -1,1 +1,15 @@
+# Alias routes — 301 permanent redirects
+/call-girls         /services                       301
+/russian-escorts    /category/russian-call-girls    301
+/vip-escorts        /category/vip-call-girls        301
+/model-escorts      /category/model-escorts         301
+/college-girls      /category/college-girls         301
+/housewife-escorts  /category/housewife-escorts     301
+/independent-escorts /category/independent-girls   301
+/air-hostess-escorts /category/air-hostess         301
+/celebrity-escorts  /category/celebrity-escorts     301
+/travel-escorts     /category/travel-escorts        301
+/vip-call-girls     /category/vip-call-girls        301
+
+# SPA fallback — must come LAST
 /*    /index.html   200

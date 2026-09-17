@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     'privacy policy, discreet escort service, client confidentiality',
   ],
   alternates: {
-    canonical: 'https://www.gurgaonescortservice.site/privacy-policy',
+    canonical: `${siteConfig.url}/privacy-policy`,
     languages: getAlternateLanguages('/privacy-policy'),
   },
   robots: {

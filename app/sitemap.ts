@@ -1,16 +1,16 @@
 import { MetadataRoute } from 'next';
 import { locations } from '@/data/locations';
 import { categories } from '@/data/categories';
-import { blogPosts } from '@/data/blogs';
+import { getPublishedBlogPosts } from '@/lib/supabaseBlog';
 import { isLocationRedirect } from '@/data/locationManifest';
 import { siteConfig } from '@/data/siteConfig';
-import pagesData from '@/data/roshni_pages.json';
-import postsData from '@/data/roshni_posts.json';
-import productsData from '@/data/roshni_products.json';
+import pagesData from '@/data/catalog_pages.json';
+import postsData from '@/data/catalog_posts.json';
+import productsData from '@/data/catalog_products.json';
 
 const BASE_URL = siteConfig.url.replace(/\/+$/, '');
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const currentDate = new Date();
   const urlSet = new Set<string>();
   const sitemapEntries: MetadataRoute.Sitemap = [];
@@ -47,7 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   addUrl('/terms', 0.3, 'monthly');
   addUrl('/disclaimer', 0.3, 'monthly');
 
-  // Exact Roshni Alias Pages
+  // High-Priority Alias Pages
   addUrl('/gurgaon-escorts-rates', 0.9, 'daily');
   addUrl('/escorts-categories', 0.9, 'daily');
   addUrl('/gurgaon-escorts-phone-number', 0.85, 'weekly');
@@ -97,7 +97,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
 
   // 7. Blog directory items
-  blogPosts.forEach((post) => {
+  const liveBlogPosts = await getPublishedBlogPosts();
+  liveBlogPosts.forEach((post) => {
     addUrl(`/blog/${post.slug}`, 0.75, 'monthly');
   });
 

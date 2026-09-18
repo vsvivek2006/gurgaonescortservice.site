@@ -14,6 +14,7 @@ import {
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import { siteConfig } from '@/data/siteConfig';
+import { getAssetUrl } from '@/lib/assets';
 import exactManifest from '@/data/exact_manifest.json';
 
 const catManifest = exactManifest.categories;
@@ -31,84 +32,84 @@ const categoryVisualGrid = [
   {
     name: 'Russian Escorts in Gurgaon',
     slug: '/gurgaon-russian-escorts',
-    image: '/images/assets/Russian_Escorts_Girl_In_Delhi.jpg',
+    image: '/images/categories/russian-escorts.webp',
     tag: 'European Charm',
     price: 'From ₹25,000',
   },
   {
     name: 'Independent Escorts in Gurgaon',
     slug: '/category/independent-girls',
-    image: '/images/assets/Independent_Escorts_Delhi.jpg',
+    image: '/images/categories/independent-escorts.webp',
     tag: 'Direct & Discreet',
     price: 'From ₹15,000',
   },
   {
     name: 'Model Escorts in Gurgaon',
     slug: '/models-escorts-in-gurgaon',
-    image: '/images/assets/High_Profile_Escorts_Girl_In_Delhi.jpg',
+    image: '/images/categories/model-escorts.webp',
     tag: 'Runway Glamour',
     price: 'From ₹25,000',
   },
   {
     name: 'VIP Call Girls in Gurgaon',
     slug: '/vip-call-girls-in-gurgaon',
-    image: '/images/assets/VIP_Call_Girls_Delhi.jpg',
+    image: '/images/categories/vip-escorts.webp',
     tag: 'Elite Class',
     price: 'From ₹20,000',
   },
   {
     name: 'College Call Girls in Gurgaon',
     slug: '/college-call-girls-gurgaon',
-    image: '/images/assets/College_Girl_Escorts_Delhi.jpg',
+    image: '/images/categories/college-girls.webp',
     tag: 'Young & Lively',
     price: 'From ₹15,000',
   },
   {
     name: 'Air Hostess Escorts in Gurgaon',
     slug: '/air-hostess-escorts-gurgaon',
-    image: '/images/assets/Air_Hostess_Escorts_Delhi.jpg',
+    image: '/images/categories/air-hostess.webp',
     tag: 'Polished Poise',
     price: 'From ₹20,000',
   },
   {
     name: 'High Profile Escorts in Gurgaon',
     slug: '/high-profile-escorts-gurgaon',
-    image: '/images/assets/Diverse_Portfolio.jpg',
+    image: '/images/categories/high-profile-girls.webp',
     tag: 'Executive Society',
     price: 'From ₹30,000',
   },
   {
     name: 'Housewife Escorts in Gurgaon',
     slug: '/housewife-escorts-gurgaon',
-    image: '/images/assets/Housewife_Escorts_Delhi.jpg',
+    image: '/images/categories/housewife-escorts.webp',
     tag: 'Mature Sensuality',
     price: 'From ₹15,000',
   },
   {
     name: 'Celebrity Escorts in Gurgaon',
     slug: '/celebrity-escorts-gurgaon',
-    image: '/images/assets/Celebrity_Escorts_Delhi.jpg',
+    image: '/images/categories/celebrity-escorts.webp',
     tag: 'A-List Stature',
     price: 'From ₹50,000',
   },
   {
     name: 'Busty Escorts in Gurgaon',
     slug: '/busty-escorts-in-gurgaon',
-    image: '/images/assets/image_290x280_3.jpg',
+    image: '/images/assets/image_270x450_21.jpg',
     tag: 'Curvaceous Assets',
     price: 'From ₹18,000',
   },
   {
     name: 'Affordable Escorts in Gurgaon',
     slug: '/affordable-escorts-in-gurgaon',
-    image: '/images/assets/image_290x280_4.jpg',
+    image: '/images/assets/image_270x450_22.jpg',
     tag: 'Budget Friendly',
     price: 'From ₹12,000',
   },
   {
     name: 'Asian Escorts in Gurgaon',
     slug: '/asian-escorts-in-gurgaon',
-    image: '/images/assets/image_290x280_5.jpg',
+    image: '/images/assets/image_270x450_23.jpg',
     tag: 'Exotic Allure',
     price: 'From ₹20,000',
   },
@@ -154,13 +155,13 @@ export default function CategoriesPage() {
               href={`https://wa.me/${siteConfig.whatsapp}?text=Hi%20ALINA%20VIP,%20I%20want%20to%20inquire%20about%20escort%20categories`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 bg-[#13bc18] hover:bg-[#0fa714] text-white text-xs sm:text-sm font-bold rounded-lg shadow transition-all flex items-center gap-2"
+              className="px-6 py-2.5 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#22bf5b] hover:to-[#0f7569] text-white shadow-md shadow-emerald-900/20 hover:shadow-lg hover:shadow-emerald-900/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs sm:text-sm font-bold rounded-xl flex items-center gap-2"
             >
               <MessageCircle size={16} /> WhatsApp Us
             </a>
             <a
               href={`tel:${siteConfig.phone}`}
-              className="px-5 py-2.5 bg-white text-[#671725] hover:bg-rose-50 text-xs sm:text-sm font-bold rounded-lg shadow transition-all flex items-center gap-2"
+              className="px-6 py-2.5 bg-white/90 hover:bg-white text-[#671725] border border-rose-200/90 hover:border-[#671725] shadow-xs hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs sm:text-sm font-bold rounded-xl transition-all flex items-center gap-2"
             >
               <Phone size={16} /> Call: {siteConfig.phoneDisplay}
             </a>
@@ -208,7 +209,7 @@ export default function CategoriesPage() {
               >
                 <div className="relative aspect-[3/4] w-full overflow-hidden bg-gray-100">
                   <Image
-                    src={cat.image}
+                    src={getAssetUrl(cat.image)}
                     alt={cat.name}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
@@ -239,7 +240,7 @@ export default function CategoriesPage() {
                       href={`https://wa.me/${siteConfig.whatsapp}?text=Hi%20ALINA%20VIP,%20I%20am%20interested%20in%20${encodeURIComponent(cat.name)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-2.5 py-1 bg-[#13bc18] hover:bg-[#0fa714] text-white text-xs font-bold rounded shadow-xs"
+                      className="px-3 py-1 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#22bf5b] hover:to-[#0f7569] text-white font-bold rounded-xl shadow-md shadow-emerald-900/20 hover:shadow-lg hover:shadow-emerald-900/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs shadow-xs"
                     >
                       WhatsApp
                     </a>

@@ -4,6 +4,7 @@ import { CheckCircle, Phone, MessageCircle } from 'lucide-react';
 import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import { siteConfig } from '@/data/siteConfig';
+import { getAssetUrl } from '@/lib/assets';
 import pagesData from '@/data/roshni_pages.json';
 
 interface Section {
@@ -73,13 +74,13 @@ export default function AboutPage() {
                 href={`https://wa.me/${siteConfig.whatsapp}?text=Hi%20${encodeURIComponent(siteConfig.name)},%20I%20want%20to%20know%20more%20about%20your%20services`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-5 py-2.5 bg-[#13bc18] hover:bg-[#0fa714] text-white text-xs sm:text-sm font-bold rounded shadow flex items-center gap-2"
+                className="px-5 py-2.5 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#22bf5b] hover:to-[#0f7569] text-white font-bold rounded-xl shadow-md shadow-emerald-900/20 hover:shadow-lg hover:shadow-emerald-900/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs sm:text-sm flex items-center gap-2"
               >
                 <MessageCircle size={16} /> WhatsApp Us
               </a>
               <a
                 href={`tel:${siteConfig.phone}`}
-                className="px-5 py-2.5 bg-[#671725] hover:bg-[#52121d] text-white text-xs sm:text-sm font-bold rounded shadow flex items-center gap-2"
+                className="px-5 py-2.5 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs sm:text-sm flex items-center gap-2"
               >
                 <Phone size={16} /> Call: {siteConfig.phoneDisplay}
               </a>
@@ -87,7 +88,7 @@ export default function AboutPage() {
           </div>
           <div className="md:col-span-5 relative aspect-[3/4] w-full rounded-xl overflow-hidden shadow-md">
             <Image
-              src="/images/assets/Diverse_Portfolio.jpg"
+              src={getAssetUrl('/images/assets/Diverse_Portfolio.jpg')}
               alt="Diverse Portfolio of Escorts in Gurgaon"
               fill
               className="object-cover"

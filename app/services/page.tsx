@@ -15,6 +15,7 @@ import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 import { escortModels } from '@/data/models';
+import { getAssetUrl } from '@/lib/assets';
 import exactManifest from '@/data/exact_manifest.json';
 
 const hub = exactManifest.serviceHub;
@@ -50,7 +51,7 @@ const serviceSubpages = [
   {
     title: 'Girlfriend Experience (GFE)',
     slug: '/girlfriend-experience-in-gurgaon',
-    image: '/images/assets/Girlfriend_Experience.jpg',
+    image: '/images/assets/Girlfriend_Experience.png',
     snippet:
       'Escorts can provide you with an experience similar to a girlfriend. But the only difference is that she will be much better with you than your girlfriend.',
     features: ['Intimate emotional bond', 'Passionate French kissing', 'Sweet romantic cuddling'],
@@ -66,7 +67,7 @@ const serviceSubpages = [
   {
     title: 'In-Call & Out-Call Services',
     slug: '/in-out-call-girls-gurgaon',
-    image: '/images/assets/In-Call_and_out-call_escorts.jpg',
+    image: '/images/assets/In_Call_And_Out_Call_Services.jpg',
     snippet:
       'Escort services are available anytime, anywhere in Gurgaon as per your need. Escorts operate either with agencies or independently for total comfort and discretion.',
     features: ['20-30 min hotel arrival', 'Private luxury suites', 'Strict anonymity guaranteed'],
@@ -74,7 +75,7 @@ const serviceSubpages = [
   {
     title: 'Escort Service for 1/2/3 Hours',
     slug: '/escort-service-for-1-2-3-hours',
-    image: '/images/assets/image_290x280_1.jpg',
+    image: '/images/assets/Independent_Escorts_To_Meet_On_Hourly_Basis.jpg',
     snippet:
       'Beauty of our escort agency is nothing but there is a chance for each and everyone to choose the escort girls on their own taste for short, intense, revitalizing encounters.',
     features: ['Rapid lunchtime dispatch', '1-2 rounds of passion', 'No advance cash on delivery'],
@@ -82,7 +83,7 @@ const serviceSubpages = [
   {
     title: 'Escort Service Full Night',
     slug: '/escort-service-full-night',
-    image: '/images/assets/image_290x280_2.jpg',
+    image: '/images/assets/Escort_At_Night_24x7_Service.png',
     snippet:
       'It is our pleasure to have you here, where you will find the most exotic and high-end Gurgaon escort service for full night unhurried romantic pleasures until dawn.',
     features: ['Full 10 PM - 8 AM intimacy', 'Morning breakfast companion', 'Unlimited intimate rounds'],
@@ -124,7 +125,7 @@ export default function ServicesPage() {
               href={`https://wa.me/${siteConfig.whatsapp}?text=Hello%20ALINA%20VIP,%20I%20want%20to%20inquire%20about%20Escort%20Services%20in%20Gurgaon`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-2.5 bg-[#13bc18] hover:bg-[#0fa714] text-white font-bold text-xs sm:text-sm rounded-lg shadow transition-all flex items-center gap-2"
+              className="px-6 py-2.5 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#22bf5b] hover:to-[#0f7569] text-white shadow-md shadow-emerald-900/20 hover:shadow-lg hover:shadow-emerald-900/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs sm:text-sm font-bold rounded-xl flex items-center gap-2"
             >
               <MessageCircle size={16} /> WhatsApp Inquiry
             </a>
@@ -205,7 +206,7 @@ export default function ServicesPage() {
               >
                 <div className="relative h-56 w-full overflow-hidden bg-gray-100">
                   <Image
-                    src={service.image}
+                    src={getAssetUrl(service.image)}
                     alt={`${service.title} in Gurgaon`}
                     fill
                     sizes="(max-width: 768px) 100vw, 400px"
@@ -247,7 +248,7 @@ export default function ServicesPage() {
                       href={`https://wa.me/${siteConfig.whatsapp}?text=Hi%20ALINA%20VIP,%20I%20am%20interested%20in%20${encodeURIComponent(service.title)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1.5 bg-[#13bc18] hover:bg-[#0fa714] text-white text-xs font-bold rounded flex items-center gap-1 shadow-sm"
+                      className="px-3.5 py-1.5 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#22bf5b] hover:to-[#0f7569] text-white shadow-md shadow-emerald-900/20 hover:shadow-lg hover:shadow-emerald-900/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs font-bold rounded-lg flex items-center gap-1.5"
                     >
                       <MessageCircle size={13} /> Book Now
                     </a>
@@ -291,7 +292,7 @@ export default function ServicesPage() {
                   href={`https://wa.me/${siteConfig.whatsapp}?text=Hi%20ALINA%20VIP,%20I%20want%20to%20book%20the%20${encodeURIComponent(rate.duration)}%20package`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-2 bg-[#671725] hover:bg-[#52121d] text-white text-xs font-bold rounded transition-colors"
+                  className="w-full py-2.5 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs text-center"
                 >
                   Book This Package
                 </a>
@@ -367,7 +368,7 @@ export default function ServicesPage() {
           <div className="text-center pt-2">
             <Link
               href="/escorts"
-              className="inline-flex items-center gap-1.5 px-6 py-2.5 bg-[#671725] hover:bg-[#52121d] text-white text-xs sm:text-sm font-bold rounded-lg shadow transition-colors"
+              className="inline-flex items-center gap-1.5 px-6 py-2.5 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs sm:text-sm"
             >
               <span>View All 200+ Escort Profiles</span>
               <ArrowRight size={15} />

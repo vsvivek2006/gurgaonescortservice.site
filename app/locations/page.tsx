@@ -13,6 +13,7 @@ import LocationsDirectory, { CompactLocation } from '@/components/LocationsDirec
 import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 import { locations } from '@/data/locations';
 import { isLocationRedirect } from '@/data/locationManifest';
+import { getAssetUrl } from '@/lib/assets';
 
 export const metadata: Metadata = {
   title: 'Escort Service Locations in Gurgaon & Delhi NCR | 108 Verified Sectors | ALINA VIP',
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     title: 'Escort Service Locations in Gurgaon & Delhi NCR | ALINA VIP',
     description:
       'Find premium escort service across prime locations in Gurgaon and Delhi NCR. Cyber City, Golf Course Road, DLF Phases 1-5, Sohna Road, Aerocity & more. Rapid 20-30 min outcall.',
-    url: 'https://www.gurgaonescortservice.site/locations',
+    url: 'https://alinavip.in/locations',
     type: 'website',
   },
 };
@@ -151,7 +152,7 @@ export default function LocationsPage() {
             >
               <div className="relative h-48 w-full rounded-lg overflow-hidden mb-3 bg-gray-100">
                 <Image
-                  src={loc.image}
+                  src={getAssetUrl(loc.image)}
                   alt={`Escort service in ${loc.title}`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -230,7 +231,7 @@ export default function LocationsPage() {
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <a
                   href={`tel:${siteConfig.phone}`}
-                  className="px-6 py-3 bg-[#671725] hover:bg-[#52121d] text-white font-bold text-xs rounded transition-colors"
+                  className="px-6 py-3 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs"
                 >
                   Call: {siteConfig.phoneDisplay}
                 </a>
@@ -238,7 +239,7 @@ export default function LocationsPage() {
                   href={`https://wa.me/${siteConfig.whatsapp}?text=Hello%20ALINA%20VIP,%20I%20need%20hotel%20outcall%20in%20Gurgaon.`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3 bg-[#13bc18] hover:bg-[#0fa814] text-white font-bold text-xs rounded transition-colors"
+                  className="px-6 py-3 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#22bf5b] hover:to-[#0f7569] text-white shadow-md shadow-emerald-900/20 hover:shadow-lg hover:shadow-emerald-900/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs font-bold rounded-xl"
                 >
                   WhatsApp Booking
                 </a>

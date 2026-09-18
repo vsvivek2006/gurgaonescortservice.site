@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import CTASection from '@/components/CTASection';
 import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
+import { getAssetUrl } from '@/lib/assets';
 
 export const metadata: Metadata = {
   title: 'Verified Photo Gallery | VIP Call Girls & Gurgaon Escorts | ALINA VIP',
@@ -275,7 +276,7 @@ export default function GalleryPage() {
             >
               <div className="relative h-[380px] w-full overflow-hidden bg-gray-100">
                 <Image
-                  src={model.image}
+                  src={getAssetUrl(model.image)}
                   alt={`${model.name} - ${model.category} in Gurgaon`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -308,14 +309,14 @@ export default function GalleryPage() {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 bg-[#13bc18] hover:bg-[#0fa814] text-white font-bold text-xs rounded transition-colors"
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#22bf5b] hover:to-[#0f7569] text-white shadow-md shadow-emerald-900/20 hover:shadow-lg hover:shadow-emerald-900/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs font-bold rounded-xl"
                   >
                     <MessageCircle size={15} />
                     <span>WhatsApp</span>
                   </a>
                   <a
                     href={`tel:${siteConfig.phone}`}
-                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 bg-[#671725] hover:bg-[#52121d] text-white font-bold text-xs rounded transition-colors"
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-xs font-bold rounded-xl"
                   >
                     <Phone size={14} className="text-luxury-gold" />
                     <span>Call Now</span>
@@ -349,7 +350,7 @@ export default function GalleryPage() {
                 className="category-inner-col group relative block rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 min-h-[420px]"
               >
                 <Image
-                  src={cat.image}
+                  src={getAssetUrl(cat.image)}
                   alt={`${cat.title} Gurgaon Escorts`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"

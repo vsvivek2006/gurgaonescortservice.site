@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { getAssetUrl } from '@/lib/assets';
 import {
   Phone,
   MessageCircle,
@@ -67,7 +68,7 @@ export default function EditorialGuideSection() {
             {/* Featured Image */}
             <div className="lg:col-span-5 relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl border border-gray-200">
               <Image
-                src="/images/assets/Diverse_Portfolio.jpg"
+                src={getAssetUrl('/images/assets/Diverse_Portfolio.jpg')}
                 alt="Diverse Portfolio of Escorts in Gurgaon"
                 fill
                 sizes="(max-width: 1024px) 100vw, 450px"
@@ -488,7 +489,7 @@ export default function EditorialGuideSection() {
             <div className="text-center pt-4">
               <a
                 href={`tel:${siteConfig.phone}`}
-                className="inline-flex items-center gap-2 px-8 py-3 bg-[#671725] hover:bg-[#52121d] text-white text-sm font-bold rounded-lg shadow-md transition-all"
+                className="inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 text-sm"
               >
                 <Phone size={16} />
                 <span>Call Concierge Now: {siteConfig.phoneDisplay}</span>

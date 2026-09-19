@@ -122,7 +122,7 @@ export const getPublishedBlogPosts = cache(async (): Promise<BlogPost[]> => {
 
   try {
     const postsRes = await fetch(
-      `${SUPABASE_URL}/rest/v1/posts?status=eq.published&or=(site_id.eq.${encodeURIComponent(SITE_ID)},site_id.is.null)&order=published_at.desc&select=*`,
+      `${SUPABASE_URL}/rest/v1/posts?site_id=eq.${encodeURIComponent(SITE_ID)}&status=eq.published&order=published_at.desc&select=*`,
       {
         headers: {
           apikey: ANON_KEY,
@@ -197,7 +197,7 @@ export const getPostBySlug = cache(async (slug: string): Promise<BlogPost | null
   if (SUPABASE_URL && ANON_KEY) {
     try {
       const postRes = await fetch(
-        `${SUPABASE_URL}/rest/v1/posts?slug=eq.${encodeURIComponent(cleanSlug)}&select=*`,
+        `${SUPABASE_URL}/rest/v1/posts?slug=eq.${encodeURIComponent(cleanSlug)}&site_id=eq.${encodeURIComponent(SITE_ID)}&select=*`,
         {
           headers: {
             apikey: ANON_KEY,

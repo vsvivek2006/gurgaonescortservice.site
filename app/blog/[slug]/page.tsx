@@ -37,7 +37,10 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const post = await getPostBySlug(slug);
 
   if (!post) {
-    notFound();
+    return {
+      title: `Article Not Found | ${siteConfig.name}`,
+      robots: { index: false, follow: false },
+    };
   }
 
   const title = `${post.title} | ${siteConfig.name}`;

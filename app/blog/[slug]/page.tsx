@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     notFound();
   }
 
-  const title = `${post.title} | ALINA VIP India`;
+  const title = `${post.title} | ${siteConfig.name}`;
   const description = post.excerpt;
   const canonicalUrl = `${siteConfig.url}/blog/${post.slug}`;
   const ogImageUrl = post.image
@@ -202,7 +202,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <div className="flex items-center gap-2 flex-wrap">
               <Tag className="w-4 h-4 text-primary-wine" />
               <span className="text-sm font-semibold text-gray-700">Tags:</span>
-              {['Escort Service', 'Gurgaon Call Girls', post.category, 'VIP Lifestyle'].map((tag) => (
+              {['Escort Service', `${siteConfig.city} Call Girls`, post.category, 'VIP Lifestyle'].map((tag) => (
                 <span
                   key={tag}
                   className="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full font-medium"

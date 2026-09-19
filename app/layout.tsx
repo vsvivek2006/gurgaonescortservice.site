@@ -76,14 +76,13 @@ export const metadata: Metadata = {
     other: {
       seobility: '01d67d85a0cff8389a0210729e64aead',
     },
-  },
+  }
 };
 
 export const viewport: Viewport = {
   themeColor: '#FFFFFF',
   width: 'device-width',
-  initialScale: 1,
-  maximumScale: 5,
+  initialScale: 1
 };
 
 
@@ -120,7 +119,7 @@ const jsonLd = {
       opens: '00:00',
       closes: '23:59',
     },
-  ],
+  ]
 };
 
 export default function RootLayout({

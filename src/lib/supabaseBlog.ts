@@ -106,7 +106,7 @@ export const getPublishedBlogPosts = cache(async (): Promise<BlogPost[]> => {
     return postsListCache.data;
   }
 
-  const localList = getLocalPosts().map(mapRowToBlogPost);
+  const localList = getLocalPosts().filter(p => p.site_id === SITE_ID).map(mapRowToBlogPost);
 
   if (!SUPABASE_URL || !ANON_KEY) {
     const combined = [...localList, ...fallbackPosts];
@@ -187,7 +187,7 @@ export const getPostBySlug = cache(async (slug: string): Promise<BlogPost | null
 
   // 2. Check local persistent store first (instant, works offline, zero network delay)
   const localPost = getLocalPostBySlug(cleanSlug);
-  if (localPost) {
+  if (localPost && localPost.site_id === SITE_ID) {
     const post = mapRowToBlogPost(localPost);
     postBySlugCache.set(cleanSlug, { data: post, timestamp: now });
     return post;

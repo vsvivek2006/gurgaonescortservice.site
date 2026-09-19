@@ -1,11 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Calendar, Clock, Eye, User, ArrowRight, Search, X } from 'lucide-react';
 import { BlogPost } from '@/data/blogs';
+import { getAssetUrl } from '@/lib/assets';
 
 interface BlogFilterProps {
   posts: BlogPost[];
@@ -13,18 +13,17 @@ interface BlogFilterProps {
 }
 
 export default function BlogFilter({ posts, categories }: BlogFilterProps) {
-  const searchParams = useSearchParams();
-  const [searchQuery, setSearchQuery] = useState(searchParams.get('search') || '');
-  const [activeCategory, setActiveCategory] = useState<string | null>(
-    searchParams.get('category') || null
-  );
+  const [searchQuery, setSearchQuery] = useState('');
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   useEffect(() => {
-    const q = searchParams.get('search') || '';
-    const cat = searchParams.get('category') || null;
-    setSearchQuery(q);
-    setActiveCategory(cat);
-  }, [searchParams]);
+    if (typeof window === 'undefined') return;
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get('search') || '';
+    const cat = params.get('category') || null;
+    if (q) setSearchQuery(q);
+    if (cat) setActiveCategory(cat);
+  }, []);
 
   const updateUrl = (query: string, category: string | null) => {
     const params = new URLSearchParams();
@@ -169,7 +168,7 @@ export default function BlogFilter({ posts, categories }: BlogFilterProps) {
             <Link href={`/blog/${post.slug}`} className="block">
               <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
                 <Image
-                  src={post.image || `/images/blog/${post.slug}.webp`}
+                  src={getAssetUrl(post.image || `/images/blog/${post.slug}.webp`)}
                   alt={`${post.title} - Escort Service in Gurgaon | Call Girls`}
                   title={`${post.title} - Escort Service in Gurgaon | Call Girls`}
                   fill
@@ -241,7 +240,7 @@ export default function BlogFilter({ posts, categories }: BlogFilterProps) {
           <button
             type="button"
             onClick={handleClearFilters}
-            className="px-6 py-2.5 bg-primary-wine hover:bg-[#50121d] text-white rounded-full text-sm font-semibold transition-all shadow-md"
+            className="px-6 py-2.5 bg-gradient-to-r from-[#671725] via-[#56131f] to-[#420c16] hover:from-[#7d1c2e] hover:to-[#55101d] text-white font-bold rounded-xl shadow-md shadow-rose-950/20 hover:shadow-lg hover:shadow-rose-950/30 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 rounded-full text-sm font-semibold"
           >
             Clear Filters &amp; View All Articles
           </button>

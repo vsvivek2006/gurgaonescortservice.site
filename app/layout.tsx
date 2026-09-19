@@ -24,14 +24,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: 'Escort Service in Gurgaon (Gurugram) | VIP Escorts Service ALINA VIP',
-    template: '%s',
+    template: '%s | ALINA VIP',
   },
   description:
     'ALINA VIP is the #1 escort service in Gurgaon (Gurugram). Book verified VIP call girls and elite escorts service with 20-30 min 5-star hotel outcall dispatch across DLF, Cyber City, and Golf Course Road.',
   keywords: siteConfig.keywords,
   applicationName: 'ALINA VIP',
-  authors: [{ name: 'ALINA VIP' }],
-  generator: 'Next.js',
+  authors: [{ name: 'ALINA VIP' }],
   robots: {
     index: true,
     follow: true,

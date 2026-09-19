@@ -5,7 +5,7 @@ const ContentSecurityPolicy = `
   style-src 'self' 'unsafe-inline';
   img-src 'self' blob: data: https:;
   font-src 'self';
-  connect-src 'self' https://wa.me https://api.whatsapp.com;
+  connect-src 'self' https://wa.me https://api.whatsapp.com https://*.supabase.co https://*.imagekit.io ws: wss:;
   frame-ancestors 'self';
   form-action 'self' https://wa.me https://api.whatsapp.com;
   base-uri 'self';
@@ -25,12 +25,17 @@ const nextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
+    outputFileTracingIncludes: {
+    '/**': [
+      './node_modules/next/dist/compiled/source-map/**/*',
+      './src/data/local_posts.json',
+    ],
+  },
   outputFileTracingExcludes: {
     '*': [
       './scripts/**/*',
       './scratch/**/*',
       './.codegraph/**/*',
-      './*.json',
     ],
   },
   async headers() {

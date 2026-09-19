@@ -1,9 +1,42 @@
+import dns from 'dns';
+try {
+  dns.setDefaultResultOrder('ipv4first');
+} catch (err) {
+  void err;
+}
+
+import { cache } from 'react';
 import { blogPosts as fallbackPosts, BlogPost } from '@/data/blogs';
 import { getAssetUrl } from '@/lib/assets';
+import { getLocalPostBySlug, getLocalPosts } from '@/lib/admin/localPostsStore';
+import type { BlogPostRecord } from '@/lib/admin/localPostsStore';
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL?.replace(/\/$/, '');
 const ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-const SITE_SLUG = process.env.NEXT_PUBLIC_SITE_SLUG || 'alinavip-in';
+const SITE_ID = process.env.NEXT_PUBLIC_SITE_ID || '78659428-7273-41e8-9758-fd0ac895a2db';
+
+// High-speed In-Memory TTL Cache
+interface CacheEntry<T> {
+  data: T;
+  timestamp: number;
+}
+
+let postsListCache: CacheEntry<BlogPost[]> | null = null;
+const postBySlugCache = new Map<string, CacheEntry<BlogPost | null>>();
+const CACHE_TTL_MS = 60 * 1000; // 60 seconds memory TTL
+
+/**
+ * On-demand cache invalidator
+ * Called on post create, update, delete, or revalidate webhook
+ */
+export function invalidateBlogCache(slug?: string): void {
+  postsListCache = null;
+  if (slug) {
+    postBySlugCache.delete(slug.toLowerCase().trim());
+  } else {
+    postBySlugCache.clear();
+  }
+}
 
 interface SupabasePostRow {
   id: string;
@@ -15,9 +48,18 @@ interface SupabasePostRow {
   author: string | null;
   tags: string[] | null;
   published_at: string | null;
+  status?: string;
 }
 
-function mapRowToBlogPost(row: SupabasePostRow): BlogPost {
+function purgeCompanionWords(text: string): string {
+  if (!text) return '';
+  return text
+    .replace(/\bcompanionship\b/gi, 'escort service')
+    .replace(/\bcompanions\b/gi, 'call girls')
+    .replace(/\bcompanion\b/gi, 'call girl');
+}
+
+function mapRowToBlogPost(row: SupabasePostRow | BlogPostRecord): BlogPost {
   let contentParagraphs: string[] = [];
   if (Array.isArray(row.content)) {
     contentParagraphs = row.content as string[];
@@ -32,90 +74,154 @@ function mapRowToBlogPost(row: SupabasePostRow): BlogPost {
     contentParagraphs = row.content.split('\n\n').filter(Boolean);
   }
 
-  const tagList = row.tags || [];
+  const cleanContent = contentParagraphs.map(p => purgeCompanionWords(p));
+  const tagList = (row.tags || []).map((t: string) => purgeCompanionWords(t));
   const primaryCategory = tagList.length > 0 ? tagList[0] : 'VIP Escorts';
 
   return {
     slug: row.slug,
-    title: row.title,
+    title: purgeCompanionWords(row.title),
     category: primaryCategory,
-    excerpt: row.excerpt || '',
+    excerpt: purgeCompanionWords(row.excerpt || ''),
     date: row.published_at ? row.published_at.split('T')[0] : '2026-01-01',
-    readTime: `${Math.max(3, Math.ceil(contentParagraphs.join(' ').length / 800))} min read`,
+    readTime: `${Math.max(3, Math.ceil(cleanContent.join(' ').length / 800))} min read`,
     image: getAssetUrl(row.cover_image || '/images/assets/Benefits_of_Booking_Through_a_Professional_Escort_.jpg'),
     author: row.author || 'ALINA VIP India',
     tags: tagList,
-    content: contentParagraphs,
+    content: cleanContent,
     views: '3.5k',
   };
 }
 
 /**
- * Fetch all published posts for the current site
- * Automatically cached with ISR (revalidates on webhook or every 24h)
+ * Fetch all published posts with:
+ * 1. React cache() memoization per render pass
+ * 2. 60-second in-memory TTL caching
+ * 3. Local persistent store fallback
+ * 4. Supabase REST query
  */
-export async function getPublishedBlogPosts(): Promise<BlogPost[]> {
+export const getPublishedBlogPosts = cache(async (): Promise<BlogPost[]> => {
+  const now = Date.now();
+  if (postsListCache && now - postsListCache.timestamp < CACHE_TTL_MS) {
+    return postsListCache.data;
+  }
+
+  const localList = getLocalPosts().map(mapRowToBlogPost);
+
   if (!SUPABASE_URL || !ANON_KEY) {
-    return fallbackPosts;
+    const combined = [...localList, ...fallbackPosts];
+    const seen = new Set<string>();
+    const result = combined.filter(p => {
+      if (seen.has(p.slug)) return false;
+      seen.add(p.slug);
+      return true;
+    });
+    postsListCache = { data: result, timestamp: now };
+    return result;
   }
 
   try {
     const postsRes = await fetch(
-      `${SUPABASE_URL}/rest/v1/posts?sites.slug=eq.${encodeURIComponent(SITE_SLUG)}&status=eq.published&order=published_at.desc&select=*,sites!inner(slug)`,
+      `${SUPABASE_URL}/rest/v1/posts?status=eq.published&or=(site_id.eq.${encodeURIComponent(SITE_ID)},site_id.is.null)&order=published_at.desc&select=*`,
       {
         headers: {
           apikey: ANON_KEY,
           Authorization: `Bearer ${ANON_KEY}`,
         },
-        next: { revalidate: 86400, tags: ['blog-posts'] },
+        signal: AbortSignal.timeout(3000),
       }
     );
 
-    if (!postsRes.ok) {
-      return fallbackPosts;
-    }
+    if (postsRes.ok) {
+      const rows: SupabasePostRow[] = await postsRes.json();
+      if (rows && rows.length > 0) {
+        const remoteList = rows.map(mapRowToBlogPost);
+        const map = new Map<string, BlogPost>();
+        fallbackPosts.forEach(p => map.set(p.slug, p));
+        remoteList.forEach(p => map.set(p.slug, p));
+        localList.forEach(p => map.set(p.slug, p));
+        const result = Array.from(map.values());
 
-    const rows: SupabasePostRow[] = await postsRes.json();
-    if (!rows || rows.length === 0) {
-      return fallbackPosts;
-    }
+        // Warm up both list and individual slug caches
+        postsListCache = { data: result, timestamp: now };
+        result.forEach(post => {
+          postBySlugCache.set(post.slug.toLowerCase(), { data: post, timestamp: now });
+        });
 
-    return rows.map(mapRowToBlogPost);
-  } catch {
-    // Graceful fallback to static files on any network error
-    return fallbackPosts;
+        return result;
+      }
+    }
+  } catch (err) {
+    console.warn('[supabaseBlog] Remote fetch fallback to local:', err);
   }
-}
+
+  const combined = [...localList, ...fallbackPosts];
+  const seen = new Set<string>();
+  const fallbackResult = combined.filter(p => {
+    if (seen.has(p.slug)) return false;
+    seen.add(p.slug);
+    return true;
+  });
+
+  postsListCache = { data: fallbackResult, timestamp: now };
+  return fallbackResult;
+});
 
 /**
- * Fetch a single published post by slug with site isolation
+ * Fetch a single post by slug with:
+ * 1. React cache() memoization
+ * 2. 60-second in-memory TTL caching
+ * 3. Local persistent store (instant 0ms)
+ * 4. Supabase REST query
+ * 5. Fallback catalog
  */
-export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
-  if (!SUPABASE_URL || !ANON_KEY) {
-    return fallbackPosts.find(p => p.slug === slug) || null;
+export const getPostBySlug = cache(async (slug: string): Promise<BlogPost | null> => {
+  const cleanSlug = slug.toLowerCase().trim();
+  const now = Date.now();
+
+  // 1. Check in-memory TTL cache
+  const cached = postBySlugCache.get(cleanSlug);
+  if (cached && now - cached.timestamp < CACHE_TTL_MS) {
+    return cached.data;
   }
 
-  try {
-    const postRes = await fetch(
-      `${SUPABASE_URL}/rest/v1/posts?slug=eq.${encodeURIComponent(slug)}&sites.slug=eq.${encodeURIComponent(SITE_SLUG)}&status=eq.published&select=*,sites!inner(slug)`,
-      {
-        headers: {
-          apikey: ANON_KEY,
-          Authorization: `Bearer ${ANON_KEY}`,
-        },
-        next: { revalidate: 86400, tags: [`blog-${slug}`] },
-      }
-    );
+  // 2. Check local persistent store first (instant, works offline, zero network delay)
+  const localPost = getLocalPostBySlug(cleanSlug);
+  if (localPost) {
+    const post = mapRowToBlogPost(localPost);
+    postBySlugCache.set(cleanSlug, { data: post, timestamp: now });
+    return post;
+  }
 
-    if (postRes.ok) {
-      const rows: SupabasePostRow[] = await postRes.json();
-      if (rows && rows.length > 0) {
-        return mapRowToBlogPost(rows[0]);
+  // 3. Query Supabase
+  if (SUPABASE_URL && ANON_KEY) {
+    try {
+      const postRes = await fetch(
+        `${SUPABASE_URL}/rest/v1/posts?slug=eq.${encodeURIComponent(cleanSlug)}&select=*`,
+        {
+          headers: {
+            apikey: ANON_KEY,
+            Authorization: `Bearer ${ANON_KEY}`,
+          },
+          signal: AbortSignal.timeout(3000),
+        }
+      );
+
+      if (postRes.ok) {
+        const rows: SupabasePostRow[] = await postRes.json();
+        if (rows && rows.length > 0) {
+          const post = mapRowToBlogPost(rows[0]);
+          postBySlugCache.set(cleanSlug, { data: post, timestamp: now });
+          return post;
+        }
       }
+    } catch {
+      // Ignore network timeout and fall back to local data
     }
-  } catch {
-    // Fall back to local
   }
 
-  return fallbackPosts.find(p => p.slug === slug) || null;
-}
+  // 4. Check hardcoded fallback catalog
+  const fallback = fallbackPosts.find(p => p.slug.toLowerCase() === cleanSlug) || null;
+  postBySlugCache.set(cleanSlug, { data: fallback, timestamp: now });
+  return fallback;
+});

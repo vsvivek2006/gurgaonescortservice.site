@@ -1,3 +1,5 @@
+export const revalidate = 86400;
+
 import { Suspense } from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
@@ -7,7 +9,8 @@ import Breadcrumb from '@/components/Breadcrumb';
 import CTASection from '@/components/CTASection';
 import BlogFilter from '@/components/BlogFilter';
 import NewsletterForm from '@/components/NewsletterForm';
-import { blogPosts, blogCategories } from '@/data/blogs';
+import { blogCategories } from '@/data/blogs';
+import { getPublishedBlogPosts } from '@/lib/supabaseBlog';
 import { siteConfig, getAlternateLanguages } from '@/data/siteConfig';
 
 export const metadata: Metadata = {
@@ -42,7 +45,8 @@ const categoryEmojis: Record<string, string> = {
   'VIP Escorts': '👑',
 };
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const posts = await getPublishedBlogPosts();
   return (
     <>
       <Breadcrumb items={[{ name: 'Home', path: '/' }, { name: 'Blog' }]} />
@@ -88,7 +92,7 @@ export default function BlogPage() {
               </div>
             }
           >
-            <BlogFilter posts={blogPosts} categories={blogCategories} />
+            <BlogFilter posts={posts} categories={blogCategories} />
           </Suspense>
         </div>
       </section>

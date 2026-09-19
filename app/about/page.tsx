@@ -50,7 +50,7 @@ export default function AboutPage() {
             About {siteConfig.name}
           </h1>
           <p className="mt-3 text-sm sm:text-base text-rose-100/90 font-light max-w-2xl mx-auto leading-relaxed">
-            Your trusted destination for genuine companionship, 100% verified independent profiles, and 5-star hotel outcall delivery across Gurgaon &amp; Delhi NCR.
+            Your trusted destination for genuine escort service, 100% verified independent profiles, and 5-star hotel outcall delivery across Gurgaon &amp; Delhi NCR.
           </p>
         </div>
       </div>

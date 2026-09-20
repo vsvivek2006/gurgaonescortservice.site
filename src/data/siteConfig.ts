@@ -73,7 +73,6 @@
 export function getAlternateLanguages(path: string = '') {
   const cleanPath = path ? (path.startsWith('/') ? path : `/${path}`) : '';
   return {
-    'en-IN': `${siteConfig.url}${cleanPath}`,
     'en': `${siteConfig.url}${cleanPath}`,
     'x-default': `${siteConfig.url}${cleanPath}`,
   };
